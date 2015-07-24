@@ -8,8 +8,8 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/login',function(req,res,next){
-  var username = req.getParameter("username");
-  var password = req.getParameter("password");
+  var username = req.body["username"];
+  var password = req.body["password"];
   if(username == "test" && password == "test"){
     res.json("success");
     res.close();
@@ -21,6 +21,6 @@ router.post('/login',function(req,res,next){
 
 router.get('/login',function(req,res,next){
   res.render('login',{});
-})
+});
 
 module.exports = router;
