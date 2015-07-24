@@ -10,12 +10,13 @@ router.get('/', function(req, res, next) {
 router.post('/login',function(req,res,next){
   var username = req.body["username"];
   var password = req.body["password"];
+    console.log(username + "" + password);
   if(username == "test" && password == "test"){
     res.json("success");
-    res.close();
+   // res.close();
   }else{
     res.json("fail");
-    res.close();
+   // res.close();
   }
 });
 
