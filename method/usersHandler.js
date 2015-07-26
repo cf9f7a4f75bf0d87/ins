@@ -1,22 +1,23 @@
 var tool        = require('./tool.js');
+var sqlHelper = require('./tool-query.js');
 
 function list(index,res){
     if(index<0){console.log("get InsuranceList Error-> index is lt 0");return;}
     var sql = "select ProductId, ProductName, ProductExplain from producttable limit " + index*3 + ",3";
-    tool.query(sql,function(close,err,rows,fields){
-        tool.renderData(res,close,err,rows,"list")
+    tool.queryOnce(sql,function(close,err,rows,fields){
+        tool.renderData(res,function(){},err,rows,"list")
     })
 }
 
 function userLogin(account,password,res){
     var sql = 'select PassWord from usertable where Account = "' + account + '"';
 
-    tool.query(sql,function(close,err,rows,fields){
+    tool.queryOnce(sql,function(close,err,rows,fields){
         var invalid = true;
         if(rows&&rows[0]){
             invalid = (rows[0].PassWord != password);
         }
-        tool.renderValid(res,close,err,invalid,"success","error");
+        tool.renderValid(res,function(){},err,invalid,"success","error");
     });
 }
 
@@ -46,7 +47,6 @@ function forgetPassWord01(res,account){
         console.log(req.session.code);
         res.json({success:true});
     })
-
 }
 
 
@@ -68,22 +68,81 @@ function modifyPassWord(res,account,newPassWord){
 function introduce(res,productId){
     var sql = 'select ProductName, ProductExplain from producttable where ProductId = "' +productId +'"';
     tool.queryOnce(sql,function(err,rows){
-        console.log(err);
-        console.log(rows[0]);
         var data = rows[0];
         tool.jsonDataOnce(res,err,data);
     })
 }
 
 
+function buy(res,account,productId,insuredPeopleId){
+    var sql = 'insert into ordertable BuyUserAccount,ProductId,InsuredId,BuyTime,NowIncome values("'+account +'","'+ productId  +'","'+ insuredPeopleId  +'","'+ new Date().toLocaleDateString() +'", 0"';
+    tool.queryOnce(sql,function(err,rows){
+        var valid = (rows&&rows.rowsAffected == 1);
+        tool.jsonValidOnce(res,err,!valid,valid);
+    });
+}
+
+
+function boughtProduct(res,account){
+    var sql = 'select ProductId from ordertable where BuyUserAccount="'+account+'"';
+    tool.queryOnce(sql,function(err,rows){
+        if(err||rows==null||(rows&&rows.length==0)){res.json({data:null});return;}
+        var data = [], idArray = rows;
+        sql = 'select * from producttable where ';
+        for(var i = 0; i<rows.length;i++){
+            if(i == rows.length-1){
+                sql += 'ProductId = "'+ rows[i] +'"';
+                tool.queryOnce(sql,function(err,rows){
+                    tool.jsonValidOnce(res,err,rows==null,rows);
+                });
+            }else{
+                sql += 'ProductId = "'+ rows[i] +'" or ';
+}}});}
+
+function getCurrentProfit(res,account,productId){
+    sqlHelper.selectTemplate("ordertable",["Profit"],["BuyUserAccount","ProductId"],[account,productId],"and", function(rows){
+       tool.jsonDataOnce(res,null,rows);
+    });
+}
+
+function modifyInformation(res,account,userName,tel,sex,idNumber,headPicture){
+    sqlHelper.updateTemplate("usertable",["UserName","Tel","Sex","IdNumber","HeadPicture"],[userName,tel,sex,idNumber,headPicture],["Account"],[account],"and",function(err,rows){
+       tool.jsonDataOnce(res,err,rows);
+    });
+}
+
+function getInsuredPeople(res,account){
+    sqlHelper.selectTemplate("insurepeopletable",["InsuredName","InsuredNumber"],["BuyUserAccount"],[account],"and",function(err,rows){
+        tool.jsonDataOnce(res,err,rows);
+    })
+}
+
+
 // get insurance list
-exports.list                    =   list;
+exports.list                    = list;
 // login
 exports.userLogin               = userLogin;
 // register
-exports.register                =   register;
-
+exports.register                = register;
+// send check code
+exports.forgetPassWord01        = forgetPassWord01;
+// verify check code
+exports.forgetPassWord02        = forgetPassWord02;
+// modify password
+exports.modifyPassWord          = modifyPassWord;
+// show details of a product
 exports.introduce               = introduce;
+// make an order
+exports.buy                     = buy;
+// give a list of product [History Order] that you bought;
+exports.boughtProduct           = boughtProduct;
+// get current profit of an order
+exports.getCurrentProfit        = getcurrentProfit;
+// modify user's information
+exports.modifyInformation       = modifyInformation;
+//get InsuredPeople associated with current user
+exports.getInsuredPeople        = getInsuredPeople;
+
 ///////////////// not 实现
 function sendVerifyCode(res,account){
 

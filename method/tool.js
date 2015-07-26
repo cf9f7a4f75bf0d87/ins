@@ -41,6 +41,11 @@ var queryOnce = function(query,deal){
     });
 };
 
+// one connection more query
+var queryMulti = function(callback){
+    pool.getConnection(callback(err,conn));
+};
+
 var isAccountExist = function(account,callback){
     var sql = 'select account from usertable where account = "'+account+'"';
     queryOnce(sql,function(err,rows,fields){
@@ -146,6 +151,14 @@ describe(title,function(){
 var testAdapter =  function(method){test("Test","test",method);}
 
 
+///////////////////////Other method//////////////////////////////
+var str2arr = function(str){
+    if(str==null){return [];}
+    else if(typeof(str)==str){
+        return [str];
+    }
+    return str;
+};
 
 
 
@@ -171,14 +184,15 @@ exports.jsonValidOnce       = jsonValidOnce;
 exports.query               = query;
 exports.isAccountExist      = isAccountExist;
 exports.queryOnce           = queryOnce;
-
+exports.queryMulti          = queryMulti;
 
 
 /////////////////Method About Unit Test//////////////////
 
 exports.test                = test;
-exports.testAdapter        = testAdapter;
+exports.testAdapter         = testAdapter;
 
 
 
-///////////////////Method About
+///////////////////Method About Other///////////////////
+exports.str2arr             = str2arr;
