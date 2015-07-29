@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var handler =   require('../method/usersHandler.js');
+var handler = require('../method/usersHandler.js');
 
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
@@ -16,7 +16,12 @@ router.post('/login',function(req,res,next){
 });
 
 router.get('/register',function(req,res,next){
-   res.render('userRegister',{});
+    handler.getImageByUsername(res,req.body.username||null);
+});
+
+router.post('/img',function(req,res){
+    //handler.getImageByUsername(res,req.body.username||null);
+    res.json({imageUrl: "https://test-areas.c9.io/images/index.png"});
 });
 
 router.post('/register',function(req,res,next){

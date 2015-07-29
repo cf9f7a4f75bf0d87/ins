@@ -1,5 +1,6 @@
 var tool        = require('./tool.js');
 var sqlHelper = require('./tool-query.js');
+var fs         = require('fs');
 
 function list(index,res){
     if(index<0){console.log("get InsuranceList Error-> index is lt 0");return;}
@@ -117,6 +118,20 @@ function getInsuredPeople(res,account){
     })
 }
 
+function getImageByUsername(res,username){
+    //...
+    fs.readFile("../public/images/index.png","binary",function(err,file){
+        if(err){
+            response.writeHead(500, {'Content-Type': 'text/plain'});
+            response.end(err);
+        }else {
+            var contentType = "image/jpeg";
+            response.writeHead(200, {'Content-Type': contentType});
+            response.write(file, "binary");
+            response.end();
+        }
+    })
+}
 
 // get insurance list
 exports.list                    = list;
@@ -137,11 +152,15 @@ exports.buy                     = buy;
 // give a list of product [History Order] that you bought;
 exports.boughtProduct           = boughtProduct;
 // get current profit of an order
-exports.getCurrentProfit        = getcurrentProfit;
+exports.getCurrentProfit        = getCurrentProfit;
 // modify user's information
 exports.modifyInformation       = modifyInformation;
 //get InsuredPeople associated with current user
 exports.getInsuredPeople        = getInsuredPeople;
+//get image by username
+exports.getImageByUsername      = getImageByUsername;
+
+
 
 ///////////////// not 实现
 function sendVerifyCode(res,account){
