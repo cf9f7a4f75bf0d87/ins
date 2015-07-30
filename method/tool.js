@@ -141,9 +141,7 @@ var createRes = function(done,test){
 function test(title,subtitle,method){
 describe(title,function(){
     it(subtitle,function(done){
-        createRes(done,function(res){
-           method(res);
-        })
+        createRes(done, method(res));
     })
 });
 }

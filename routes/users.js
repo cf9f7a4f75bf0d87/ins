@@ -12,16 +12,28 @@ router.get('/login',function(req,res,next){
 });
 
 router.post('/login',function(req,res,next){
-    handler.userLogin(req.body.username||"",req.body.password,res);
+
+    handler.userLogin(req.body.username||"",req.body.password||"",res);
 });
 
 router.get('/register',function(req,res,next){
-    handler.getImageByUsername(res,req.body.username||null);
+    res.render("login",{});
+});
+
+router.get('/img',function(req,res){
+    res.json({data: "https://test-areas.c9.io/images/index.png"});
 });
 
 router.post('/img',function(req,res){
-    //handler.getImageByUsername(res,req.body.username||null);
-    res.json({imageUrl: "https://test-areas.c9.io/images/index.png"});
+    handler.getHPicByUsername(res,req.body.username||null);
+});
+
+router.get('/headPicture',function(req,res){
+    handler.getHPicByUsername(res,req.body.username||"");
+});
+
+router.post('/headPicture',function(req,res){
+    handler.getHPicByUsername(res,req.body.username||"");
 });
 
 router.post('/register',function(req,res,next){

@@ -118,19 +118,30 @@ function getInsuredPeople(res,account){
     })
 }
 
-function getImageByUsername(res,username){
+function getHPicByUsername(res,username){
     //...
-    fs.readFile("../public/images/index.png","binary",function(err,file){
-        if(err){
-            response.writeHead(500, {'Content-Type': 'text/plain'});
-            response.end(err);
-        }else {
-            var contentType = "image/jpeg";
-            response.writeHead(200, {'Content-Type': contentType});
-            response.write(file, "binary");
-            response.end();
-        }
-    })
+    console.log(username);
+    var sql = 'select HeadPicture from usertable where Account = "' + username + '"';
+    tool.queryOnce(sql,function(err,rows){
+        console.log(err +"  " + rows);
+        var data= rows?rows[0]:null;
+        tool.jsonDataOnce(res,err,data);
+    });
+}
+
+function readHPicByUsername(res,username){
+    res.json({data:ok});
+    //fs.readFile("../public/images/index.png","binary",function(err,file){
+    //    if(err){
+    //        response.writeHead(500, {'Content-Type': 'text/plain'});
+    //        response.end(err);
+    //    }else {
+    //        var contentType = "image/jpeg";
+    //        response.writeHead(200, {'Content-Type': contentType});
+    //        response.write(file, "binary");
+    //        response.end();
+    //    }
+    //})
 }
 
 // get insurance list
@@ -155,11 +166,12 @@ exports.boughtProduct           = boughtProduct;
 exports.getCurrentProfit        = getCurrentProfit;
 // modify user's information
 exports.modifyInformation       = modifyInformation;
-//get InsuredPeople associated with current user
+// get InsuredPeople associated with current user
 exports.getInsuredPeople        = getInsuredPeople;
-//get image by username
-exports.getImageByUsername      = getImageByUsername;
-
+// get Head Picture by username
+exports.getHPicByUsername       = getHPicByUsername;
+// send Head Picture by username
+exports.readHPicByUsername      = readHPicByUsername;
 
 
 ///////////////// not 实现

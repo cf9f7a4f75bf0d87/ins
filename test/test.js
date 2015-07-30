@@ -1,5 +1,5 @@
 //require('should');
-var  handler    = require('../method/usersHandler.js');
+var handler    = require('../method/usersHandler.js');
 var request = require('supertest');
 var express = require('express');
 var tool = require('../method/tool.js');
@@ -7,9 +7,9 @@ var app = express();
 
 
 
-tool.testAdapter(function(res){
-    handler.introduce(res,1);
-});
+//tool.testAdapter(function(res){
+//    handler.introduce(res,1);
+//});
 
 //
 //describe('Get /user',function(){
