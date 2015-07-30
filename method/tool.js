@@ -112,6 +112,7 @@ var jsonValid = function(res,close,err,invalid,data){
 var jsonDataOnce = function(res,err,data){
     if(err){console.log(err);data=null;}
     console.log(data);
+    console.log("====");
     res.json({msg:data});
 };
 

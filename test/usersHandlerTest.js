@@ -19,5 +19,15 @@ describe('Get /users',function(){
             .send({username:1})
             .expect('Content-Type',/json/)
             .expect("data",done);
+    });
+
+    it("Get product list",function(done){
+        var data = {index:1};
+        request('http://localhost:3000/users/')
+            .post("list")
+            .type("form")
+            .send(data)
+            .expect('Content-Type',/json/)
+            .expect("data",done);
     })
 });

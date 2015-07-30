@@ -1,12 +1,12 @@
 var tool        = require('./tool.js');
-var sqlHelper = require('./tool-query.js');
-var fs         = require('fs');
+var sqlHelper   = require('./tool-query.js');
+var fs          = require('fs');
 
 function list(index,res){
     if(index<0){console.log("get InsuranceList Error-> index is lt 0");return;}
-    var sql = "select ProductId, ProductName, ProductExplain from producttable limit " + index*3 + ",3";
-    tool.queryOnce(sql,function(close,err,rows,fields){
-        tool.renderData(res,function(){},err,rows,"list")
+    var sql = "select ProductId, ProductName, ShortExplain, ProductUrl from producttable limit " + index*3 + ",3";
+    tool.queryOnce(sql,function(err,rows){
+        tool.jsonDataOnce(res,err,rows);
     })
 }
 
@@ -15,10 +15,14 @@ function userLogin(account,password,res){
 
     tool.queryOnce(sql,function(close,err,rows,fields){
         var invalid = true;
+        console.log(rows);
         if(rows&&rows[0]){
             invalid = (rows[0].PassWord != password);
         }
-        tool.renderValid(res,function(){},err,invalid,"success","error");
+        //tool.renderValid(res,function(){},err,invalid,"success","error");
+        if(invalid||err){res.json(false);}
+        else{res.json(true);}
+
     });
 }
 
@@ -34,7 +38,6 @@ function register(res,account,username,password,tel,sex,idNumber,headPicture){
             tool.renderValid(res,function(){},err,invalid,"successPath","errorPath");
         });
     });
-
 }
 
 
