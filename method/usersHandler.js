@@ -13,7 +13,7 @@ function list(index,res){
 function userLogin(account,password,res){
     var sql = 'select PassWord from usertable where Account = "' + account + '"';
 
-    tool.queryOnce(sql,function(close,err,rows,fields){
+    tool.queryOnce(sql,function(err,rows,fields){
         var invalid = true;
         console.log(rows);
         if(rows&&rows[0]){

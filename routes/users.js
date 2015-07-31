@@ -12,7 +12,6 @@ router.get('/login',function(req,res,next){
 });
 
 router.post('/login',function(req,res,next){
-
     handler.userLogin(req.body.username||"",req.body.password||"",res);
 });
 
