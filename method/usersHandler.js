@@ -29,36 +29,46 @@ function userLogin(account,password,res){
 function register(res,account,username,password,tel,sex,idNumber,headPicture,birthday){
     tool.isAccountExist(account,function(err,rows){
         console.log(err + "  " + rows);
-        if(err||rows){
+        if(err||rows[0]){
             //res.render('error',{message:"account exist"});return;
             res.send("用户名存在");return;
         }
-        var sql = "insert into usertable (Account,UserName,PassWord,Tel,Sex,IdNumber,HeaderPicture,Birthday) values('"+account+'","'+username+'","'+password+'","'+tel+'","'+sex+'","'+idNumber+'","'+headPicture+'","'+birthday+'")';
+        var sql = 'insert into usertable (Account,UserName,PassWord,Tel,Sex,IdNumber,HeadPicture,Birthday) values("'+account+'","'+username+'","'+password+'","'+tel+'","'+sex+'","'+idNumber+'","'+headPicture+'","'+birthday+'")';
         tool.queryOnce(sql,function(err,rows){
             var invalid = (rows.affectedRows != 1);
             //tool.renderValid(res,function(){},err,invalid,"successPath","errorPath");
-            tool.jsonValidOnce(res,err,invalid,true);
+            res.send(err?err:(!invalid));
         });
     });
 }
 
 
-function forgetPassWord01(res,account){
+function getCode(req,res,account){
     var sql = 'select Tel from usertable where Account = "'+account+'"';
     tool.queryOnce(sql,function(err,rows){
-        if(err||rows||rows[0]){res.json({success:false});return;}
+        if(err||rows||rows[0]){res.send(false);return;}
         // send a code to account 's tel
         var code = (Math.random() * 10000 + 1000) % 10000;
         req.session.code = code;
         console.log(req.session.code);
-        res.json({success:true});
+        res.json(true);
     })
 }
 
 
-function forgetPassWord02(res,account,userCode){
-    console.log(req.session.code);
-    tool.renderValid(res,function(){},null,userCode==req.session.code||null,"success","error");
+function forgetPassWord(req,res,account,password,code){
+    console.log(req.session.code + "*************");
+    if(code != req.session.code){
+        res.send("验证码不对...");return ;
+    }
+    var sql = 'update usertable set PassWord = "' + password +'" where Account = "' + account +'"';
+    tool.queryOnce(sql,function(err,rows){
+        if(err||(rows&&rows.affectedRows!=1)){
+            res.send("更新失败..");return;
+        }
+        res.send(true);
+    });
+    //tool.renderValid(res,function(){},null,Code==req.session.code||null,"success","error");
 }
 
 
@@ -170,10 +180,13 @@ function getAllFriends(res,account,index){
     var sql = 'select InsuredName,InsuredIdNumber from insuredpeopletable where BuyUserAccount ="'+ account +'" limit ' + index * 3+','+ index*3+2;
     tool.queryOnce(sql,function(err,rows){
         tool.jsonDataOnce(res,err,tool.null2arr(rows));
-    })
+    });
 }
 
-//function getA
+function getMyOrders(res,account){
+    var sql = 'select '
+}
+
 
 // get insurance list
 exports.list                    = list;
@@ -182,9 +195,9 @@ exports.userLogin               = userLogin;
 // register
 exports.register                = register;
 // send check code
-exports.forgetPassWord01        = forgetPassWord01;
+exports.getcode                 = getCode;
 // verify check code
-exports.forgetPassWord02        = forgetPassWord02;
+exports.forgetPassWord          = forgetPassWord;
 // modify password
 exports.modifyPassWord          = modifyPassWord;
 // show details of a product

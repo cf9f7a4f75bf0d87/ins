@@ -55,6 +55,14 @@ router.post('/register',function(req,res,next){
 
 });
 
+
+router.post('/forgetPassword',function(req,res){
+    handler.forgetPassWord(req, res, req.body.username||"", req.body.password, req.body.code);
+});
+
+router.post('/getCode',function(req,res){
+    handler.getcode(req,res,req.body.username||"");
+});
 /**
  * get insurance list
  */
