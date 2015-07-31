@@ -40,20 +40,20 @@ router.post('/headPicture',function(req,res){
     handler.getHPicByUsername(res,req.body.username||"");
 });
 
-router.post('/register',function(req,res,next){
-    var username = req.body.UserName;
-    var password = req.body.PassWord;
-    var tel      = req.body.Tel;
-    var sex      = req.body.Sex;
-    var idNumber = req.body.IdNumber;
-    var headPic  = req.body.HeadPicture;
-    if(username&&password&&tel&&sex&&idNumber&&headPic){
-        handler.register(res,username,password,tel,sex,idNumber,headPic);
-    }else{
-        res.render('error',{message:"some area is empty"});
-    }
-
-});
+//router.post('/register',function(req,res,next){
+//    var username = req.body.UserName;
+//    var password = req.body.PassWord;
+//    var tel      = req.body.Tel;
+//    var sex      = req.body.Sex;
+//    var idNumber = req.body.IdNumber;
+//    var headPic  = req.body.HeadPicture;
+//    if(username&&password&&tel&&sex&&idNumber&&headPic){
+//        handler.register(res,username,password,tel,sex,idNumber,headPic);
+//    }else{
+//        res.render('error',{message:"some area is empty"});
+//    }
+//
+//});
 
 
 router.post('/forgetPassword',function(req,res){

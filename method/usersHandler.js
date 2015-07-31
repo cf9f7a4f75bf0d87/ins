@@ -46,7 +46,7 @@ function register(res,account,username,password,tel,sex,idNumber,headPicture,bir
 function getCode(req,res,account){
     var sql = 'select Tel from usertable where Account = "'+account+'"';
     tool.queryOnce(sql,function(err,rows){
-        if(err||rows||rows[0]){res.send(false);return;}
+        if(err||(rows&&rows[0])){res.send(false);return;}
         // send a code to account 's tel
         var code = (Math.random() * 10000 + 1000) % 10000;
         req.session.code = code;
