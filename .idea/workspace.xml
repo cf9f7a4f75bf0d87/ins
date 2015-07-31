@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46e5e570-07e2-46ce-a18f-ef950e3d2534" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/test/usersHandlerTest.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/test.js" afterPath="$PROJECT_DIR$/test/test.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/method/tool.js" afterPath="$PROJECT_DIR$/method/tool.js" />
+    <list default="true" id="46e5e570-07e2-46ce-a18f-ef950e3d2534" name="Default" comment="测试&#10;/getPro">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/users.js" afterPath="$PROJECT_DIR$/routes/users.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/method/usersHandler.js" afterPath="$PROJECT_DIR$/method/usersHandler.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -28,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="users.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58774376">
-              <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="72" column="3" selection-start-line="72" selection-start-column="3" selection-end-line="72" selection-end-column="3" />
               <folding>
                 <element signature="e#965#1398#0" expanded="false" />
               </folding>
@@ -44,25 +41,20 @@
         <entry file="file://$PROJECT_DIR$/test/test.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="35" />
+              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="usersHandler.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="usersHandler.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/method/usersHandler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.18351477">
+              <caret line="155" column="1" selection-start-line="155" selection-start-column="1" selection-end-line="155" selection-end-column="1" />
               <folding>
-                <element signature="n#!!block;n#userLogin#0" expanded="false" />
-                <element signature="e#1029#1106#0" expanded="false" />
-                <element signature="e#1359#1508#0" expanded="false" />
-                <element signature="e#3543#3854#0" expanded="false" />
-                <element signature="e#3579#3788#0" expanded="false" />
-                <element signature="e#3688#3772#0" expanded="false" />
-                <element signature="e#3792#3853#0" expanded="false" />
+                <element signature="e#1445#1594#0" expanded="false" />
+                <element signature="e#3877#3938#0" expanded="false" />
                 <element signature="n#!!block;n#sendVerifyCode#0" expanded="false" />
               </folding>
             </state>
@@ -73,9 +65,46 @@
         <entry file="file://$PROJECT_DIR$/test/usersHandlerTest.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
+              <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
               <folding>
                 <element signature="e#0#35#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tool.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/method/tool.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
+              <folding>
+                <element signature="e#0#38#0" expanded="false" />
+                <element signature="e#98#203#0" expanded="false" />
+                <element signature="e#257#385#0" expanded="false" />
+                <element signature="e#418#673#0" expanded="false" />
+                <element signature="e#461#669#0" expanded="false" />
+                <element signature="e#548#661#0" expanded="false" />
+                <element signature="e#676#714#0" expanded="false" />
+                <element signature="e#779#1034#0" expanded="false" />
+                <element signature="e#822#1030#0" expanded="false" />
+                <element signature="e#909#1022#0" expanded="false" />
+                <element signature="e#1101#1148#0" expanded="false" />
+                <element signature="e#1198#1393#0" expanded="false" />
+                <element signature="e#1320#1390#0" expanded="false" />
+                <element signature="e#1397#1501#0" expanded="false" />
+                <element signature="e#1552#1673#0" expanded="false" />
+                <element signature="e#1675#1814#0" expanded="false" />
+                <element signature="e#1886#2041#0" expanded="false" />
+                <element signature="e#1919#1975#0" expanded="false" />
+                <element signature="e#1979#2039#0" expanded="false" />
+                <element signature="e#2045#2101#0" expanded="false" />
+                <element signature="e#2145#2251#0" expanded="false" />
+                <element signature="e#2306#2446#0" expanded="false" />
+                <element signature="e#2341#2395#0" expanded="false" />
+                <element signature="e#3321#3429#0" expanded="false" />
+                <element signature="e#3382#3411#0" expanded="false" />
+                <element signature="e#3434#3484#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -128,11 +157,11 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/method/tool-query.js" />
         <option value="$PROJECT_DIR$/test/userHandlerTest.js" />
-        <option value="$PROJECT_DIR$/method/tool.js" />
         <option value="$PROJECT_DIR$/test/test.js" />
-        <option value="$PROJECT_DIR$/method/usersHandler.js" />
-        <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/test/usersHandlerTest.js" />
+        <option value="$PROJECT_DIR$/method/tool.js" />
+        <option value="$PROJECT_DIR$/routes/users.js" />
+        <option value="$PROJECT_DIR$/method/usersHandler.js" />
       </list>
     </option>
   </component>
@@ -288,9 +317,9 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="recentsLimit" value="5" />
     <property name="FullScreen" value="false" />
-    <property name="settings.editor.selected.configurable" value="project.propDebugger" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="settings.editor.splitter.proportion" value="0.25071225" />
-    <property name="restartRequiresConfirmation" value="true" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -299,7 +328,7 @@
       <recent name="$PROJECT_DIR$/public/javascripts" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.usersHandlerTest.js">
+  <component name="RunManager" selected="Node.js.bin/www">
     <configuration default="false" name="usersHandlerTest.js" type="NodeJSConfigurationType" factoryName="Node.js" temporary="true" path-to-node="/usr/local/bin/node" path-to-js-file="usersHandlerTest.js" working-dir="$PROJECT_DIR$/test">
       <method />
     </configuration>
@@ -368,7 +397,19 @@
       <option name="project" value="LOCAL" />
       <updated>1438174726019</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="可以接受图片请求">
+      <created>1438230817302</created>
+      <option name="number" value="00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1438230817302</updated>
+    </task>
+    <task id="LOCAL-00003" summary="测试&#10;/list&#10;/login">
+      <created>1438243012675</created>
+      <option name="number" value="00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1438243012676</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -380,9 +421,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34108528" sideWeight="0.52562225" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4026746" sideWeight="0.48316252" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3536404" sideWeight="0.48316252" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42199108" sideWeight="0.47437775" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42199108" sideWeight="0.47437775" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53343236" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -408,7 +449,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="图片测试" />
-    <option name="LAST_COMMIT_MESSAGE" value="图片测试" />
+    <MESSAGE value="可以接受图片请求" />
+    <MESSAGE value="测试&#10;/list&#10;/login" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试&#10;/list&#10;/login" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -454,13 +497,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="n#!!block;n#userLogin#0" expanded="false" />
-            <element signature="e#1029#1106#0" expanded="false" />
-            <element signature="e#1359#1508#0" expanded="false" />
-            <element signature="e#3543#3854#0" expanded="false" />
-            <element signature="e#3579#3788#0" expanded="false" />
-            <element signature="e#3688#3772#0" expanded="false" />
-            <element signature="e#3792#3853#0" expanded="false" />
+            <element signature="e#1445#1594#0" expanded="false" />
+            <element signature="e#3877#3938#0" expanded="false" />
             <element signature="n#!!block;n#sendVerifyCode#0" expanded="false" />
           </folding>
         </state>
@@ -494,11 +532,9 @@
             <element signature="e#2145#2251#0" expanded="false" />
             <element signature="e#2306#2446#0" expanded="false" />
             <element signature="e#2341#2395#0" expanded="false" />
-            <element signature="e#2636#2763#0" expanded="false" />
-            <element signature="e#2658#2712#0" expanded="false" />
-            <element signature="e#3296#3404#0" expanded="false" />
-            <element signature="e#3357#3386#0" expanded="false" />
-            <element signature="e#3409#3459#0" expanded="false" />
+            <element signature="e#3321#3429#0" expanded="false" />
+            <element signature="e#3382#3411#0" expanded="false" />
+            <element signature="e#3434#3484#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -526,13 +562,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
           <folding>
-            <element signature="n#!!block;n#userLogin#0" expanded="false" />
-            <element signature="e#1029#1106#0" expanded="false" />
-            <element signature="e#1359#1508#0" expanded="false" />
-            <element signature="e#3543#3854#0" expanded="false" />
-            <element signature="e#3579#3788#0" expanded="false" />
-            <element signature="e#3688#3772#0" expanded="false" />
-            <element signature="e#3792#3853#0" expanded="false" />
+            <element signature="e#1445#1594#0" expanded="false" />
+            <element signature="e#3877#3938#0" expanded="false" />
             <element signature="n#!!block;n#sendVerifyCode#0" expanded="false" />
           </folding>
         </state>
@@ -581,11 +612,9 @@
             <element signature="e#2145#2251#0" expanded="false" />
             <element signature="e#2306#2446#0" expanded="false" />
             <element signature="e#2341#2395#0" expanded="false" />
-            <element signature="e#2636#2763#0" expanded="false" />
-            <element signature="e#2658#2712#0" expanded="false" />
-            <element signature="e#3296#3404#0" expanded="false" />
-            <element signature="e#3357#3386#0" expanded="false" />
-            <element signature="e#3409#3459#0" expanded="false" />
+            <element signature="e#3321#3429#0" expanded="false" />
+            <element signature="e#3382#3411#0" expanded="false" />
+            <element signature="e#3434#3484#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -847,18 +876,28 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test/test.js">
+    <entry file="file://$PROJECT_DIR$/method/tool-query.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="35" />
+          <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/usersHandlerTest.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="32" selection-start-line="15" selection-start-column="32" selection-end-line="15" selection-end-column="32" />
+          <folding>
+            <element signature="e#0#35#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/method/tool.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41935483">
-          <caret line="113" column="22" selection-start-line="113" selection-start-column="22" selection-end-line="113" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="121" column="20" selection-start-line="121" selection-start-column="20" selection-end-line="121" selection-end-column="20" />
           <folding>
             <element signature="e#0#38#0" expanded="false" />
             <element signature="e#98#203#0" expanded="false" />
@@ -883,56 +922,39 @@
             <element signature="e#2145#2251#0" expanded="false" />
             <element signature="e#2306#2446#0" expanded="false" />
             <element signature="e#2341#2395#0" expanded="false" />
-            <element signature="e#2636#2763#0" expanded="false" />
-            <element signature="e#2658#2712#0" expanded="false" />
-            <element signature="e#3296#3404#0" expanded="false" />
-            <element signature="e#3357#3386#0" expanded="false" />
-            <element signature="e#3409#3459#0" expanded="false" />
+            <element signature="e#3321#3429#0" expanded="false" />
+            <element signature="e#3382#3411#0" expanded="false" />
+            <element signature="e#3434#3484#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/method/tool-query.js">
+    <entry file="file://$PROJECT_DIR$/test/test.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/method/usersHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="123" column="0" selection-start-line="123" selection-start-column="0" selection-end-line="123" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!block;n#userLogin#0" expanded="false" />
-            <element signature="e#1029#1106#0" expanded="false" />
-            <element signature="e#1359#1508#0" expanded="false" />
-            <element signature="e#3543#3854#0" expanded="false" />
-            <element signature="e#3579#3788#0" expanded="false" />
-            <element signature="e#3688#3772#0" expanded="false" />
-            <element signature="e#3792#3853#0" expanded="false" />
-            <element signature="n#!!block;n#sendVerifyCode#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test/usersHandlerTest.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="33" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
-          <folding>
-            <element signature="e#0#35#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58774376">
-          <caret line="33" column="0" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="72" column="3" selection-start-line="72" selection-start-column="3" selection-end-line="72" selection-end-column="3" />
           <folding>
             <element signature="e#965#1398#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/method/usersHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.18351477">
+          <caret line="155" column="1" selection-start-line="155" selection-start-column="1" selection-end-line="155" selection-end-column="1" />
+          <folding>
+            <element signature="e#1445#1594#0" expanded="false" />
+            <element signature="e#3877#3938#0" expanded="false" />
+            <element signature="n#!!block;n#sendVerifyCode#0" expanded="false" />
           </folding>
         </state>
       </provider>

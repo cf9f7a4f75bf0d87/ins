@@ -68,4 +68,8 @@ router.post('/introduce',function(req,res,next){
     handler.introduce(res,req.body.prodectId||0);
 });
 
+router.get('/products',function(req,res){
+    handler.getProductExplain(res,req.body.productId||"");
+});
+
 module.exports = router;

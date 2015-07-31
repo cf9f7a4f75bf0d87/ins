@@ -147,6 +147,14 @@ function readHPicByUsername(res,username){
     //})
 }
 
+function getProductExplain(res,productId){
+    var sql = 'select ProductExplain from producttable where ProductId = "' + productId +'"';
+    tool.queryOnce(sql,function(err,rows){
+       tool.jsonDataOnce(res,err,rows?rows[0]:null);
+    });
+
+}
+
 // get insurance list
 exports.list                    = list;
 // login
@@ -176,7 +184,7 @@ exports.getHPicByUsername       = getHPicByUsername;
 // send Head Picture by username
 exports.readHPicByUsername      = readHPicByUsername;
 
-
+exports.getProductExplain       = getProductExplain;
 ///////////////// not 实现
 function sendVerifyCode(res,account){
 
