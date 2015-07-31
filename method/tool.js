@@ -159,6 +159,12 @@ var str2arr = function(str){
     return str;
 };
 
+var null2arr = function(sth){
+    if(sth==null||sth=={}){
+        return [];
+    }
+    return sth;
+}
 
 
 ////////////////Method About Render///////////////
@@ -195,3 +201,4 @@ exports.testAdapter         = testAdapter;
 
 ///////////////////Method About Other///////////////////
 exports.str2arr             = str2arr;
+exports.null2arr            = null2arr;

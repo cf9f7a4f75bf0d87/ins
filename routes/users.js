@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var handler = require('../method/usersHandler.js');
+var config  = require("../method/config.js");
 
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
@@ -17,6 +18,10 @@ router.post('/login',function(req,res,next){
 
 router.get('/register',function(req,res,next){
     res.render("login",{});
+});
+
+router.post('/register',function(req,res){
+    handler.register(res,req.body.account||"",req.body.username||"",req.body.password||"123456",req.body.tel||"",req.body.sex||"男",req.body.idNumber,config.checkHeadPicture(req.body.headPicture));
 });
 
 router.get('/img',function(req,res){

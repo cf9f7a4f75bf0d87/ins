@@ -26,13 +26,14 @@ function userLogin(account,password,res){
     });
 }
 
-function register(res,account,username,password,tel,sex,idNumber,headPicture){
+function register(res,account,username,password,tel,sex,idNumber,headPicture,birthday){
     tool.isAccountExist(account,function(err,rows){
         console.log(err + "  " + rows);
         if(err||rows){
-            res.render('error',{message:"account exist"});return;
+            //res.render('error',{message:"account exist"});return;
+            res.send("用户名存在");return;
         }
-        var sql = "insert into usertable (Account,UserName,PassWord,Tel,Sex,IdNumber,HeaderPicture) values('"+account+'","'+username+'","'+password+'","'+tel+'","'+sex+'","'+idNumber+'","'+headPicture+'")';
+        var sql = "insert into usertable (Account,UserName,PassWord,Tel,Sex,IdNumber,HeaderPicture,Birthday) values('"+account+'","'+username+'","'+password+'","'+tel+'","'+sex+'","'+idNumber+'","'+headPicture+'","'+birthday+'")';
         tool.queryOnce(sql,function(err,rows){
             var invalid = (rows.affectedRows != 1);
             tool.renderValid(res,function(){},err,invalid,"successPath","errorPath");
@@ -153,6 +154,19 @@ function getProductExplain(res,productId){
        tool.jsonDataOnce(res,err,rows?rows[0]:null);
     });
 
+}
+
+
+function getAllProfits(res,account,index){
+    var sql = 'select NowIncome from ordertable where BuyUserAccount = "'+account +'" limit ' + index*3 +','+ index*3+2;
+    tool.queryOnce(sql,function(err,rows){
+        tool.jsonDataOnce(res,err,tool.null2arr(rows));
+    });
+}
+
+
+function getAllFriends(res,account,index){
+    //var sql = 'select InsuredName'
 }
 
 // get insurance list
