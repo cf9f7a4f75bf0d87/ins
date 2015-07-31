@@ -48,7 +48,7 @@ var queryMulti = function(callback){
 
 var isAccountExist = function(account,callback){
     var sql = 'select account from usertable where account = "'+account+'"';
-    queryOnce(sql,function(err,rows,fields){
+    queryOnce(sql,function(err,rows){
         if(err){console.log(err);}
         callback(err,rows);
     })

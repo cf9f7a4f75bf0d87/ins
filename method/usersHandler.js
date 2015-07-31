@@ -36,7 +36,8 @@ function register(res,account,username,password,tel,sex,idNumber,headPicture,bir
         var sql = "insert into usertable (Account,UserName,PassWord,Tel,Sex,IdNumber,HeaderPicture,Birthday) values('"+account+'","'+username+'","'+password+'","'+tel+'","'+sex+'","'+idNumber+'","'+headPicture+'","'+birthday+'")';
         tool.queryOnce(sql,function(err,rows){
             var invalid = (rows.affectedRows != 1);
-            tool.renderValid(res,function(){},err,invalid,"successPath","errorPath");
+            //tool.renderValid(res,function(){},err,invalid,"successPath","errorPath");
+            tool.jsonValidOnce(res,err,invalid,true);
         });
     });
 }
@@ -166,8 +167,13 @@ function getAllProfits(res,account,index){
 
 
 function getAllFriends(res,account,index){
-    //var sql = 'select InsuredName'
+    var sql = 'select InsuredName,InsuredIdNumber from insuredpeopletable where BuyUserAccount ="'+ account +'" limit ' + index * 3+','+ index*3+2;
+    tool.queryOnce(sql,function(err,rows){
+        tool.jsonDataOnce(res,err,tool.null2arr(rows));
+    })
 }
+
+//function getA
 
 // get insurance list
 exports.list                    = list;
