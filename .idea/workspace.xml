@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46e5e570-07e2-46ce-a18f-ef950e3d2534" name="Default" comment="测试&#10;/验证码&#10;继续修改">
+    <list default="true" id="46e5e570-07e2-46ce-a18f-ef950e3d2534" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/method/tool-query.js" afterPath="$PROJECT_DIR$/method/tool-query.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/users.js" afterPath="$PROJECT_DIR$/routes/users.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/method/usersHandler.js" afterPath="$PROJECT_DIR$/method/usersHandler.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -25,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="users.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.9085366">
-              <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+            <state vertical-scroll-proportion="-9.258064">
+              <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -39,19 +40,60 @@
         <entry file="file://$PROJECT_DIR$/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
+              <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="usersHandler.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="tool.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/method/tool.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
+              <folding>
+                <element signature="e#0#38#0" expanded="false" />
+                <element signature="e#98#203#0" expanded="false" />
+                <element signature="e#257#385#0" expanded="false" />
+                <element signature="e#418#673#0" expanded="false" />
+                <element signature="e#461#669#0" expanded="false" />
+                <element signature="e#548#661#0" expanded="false" />
+                <element signature="e#676#714#0" expanded="false" />
+                <element signature="e#1388#1492#0" expanded="false" />
+                <element signature="e#1543#1664#0" expanded="false" />
+                <element signature="e#1666#1805#0" expanded="false" />
+                <element signature="e#1877#2032#0" expanded="false" />
+                <element signature="e#1910#1966#0" expanded="false" />
+                <element signature="e#2036#2092#0" expanded="false" />
+                <element signature="e#3294#3402#0" expanded="false" />
+                <element signature="e#3355#3384#0" expanded="false" />
+                <element signature="e#3508#3558#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="usersHandler.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/method/usersHandler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.5806452">
-              <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+            <state vertical-scroll-proportion="0.6151419">
+              <caret line="265" column="0" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
               <folding>
+                <element signature="e#6922#7429#0" expanded="false" />
+                <element signature="e#7433#7504#0" expanded="false" />
                 <element signature="n#!!block;n#sendVerifyCode#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tool-query.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/method/tool-query.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+              <folding>
+                <element signature="e#1735#2964#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -82,12 +124,12 @@
         <option value="$PROJECT_DIR$/views/userRegister.hbs" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/method/tool-query.js" />
         <option value="$PROJECT_DIR$/test/userHandlerTest.js" />
         <option value="$PROJECT_DIR$/test/test.js" />
         <option value="$PROJECT_DIR$/test/usersHandlerTest.js" />
         <option value="$PROJECT_DIR$/method/config.js" />
         <option value="$PROJECT_DIR$/method/tool.js" />
+        <option value="$PROJECT_DIR$/method/tool-query.js" />
         <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/method/usersHandler.js" />
       </list>
@@ -327,7 +369,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438346607061</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="测试&#10;/验证码&#10;继续修改">
+      <created>1438405894604</created>
+      <option name="number" value="00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1438405894604</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -336,16 +384,16 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15636635" sideWeight="0.49455675" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34108528" sideWeight="0.52562225" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3536404" sideWeight="0.48316252" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4383358" sideWeight="0.48316252" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.42199108" sideWeight="0.47437775" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42199108" sideWeight="0.47437775" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15753938" sideWeight="0.5054432" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53343236" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32243684" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -375,7 +423,8 @@
     <MESSAGE value="测试&#10;/register" />
     <MESSAGE value="测试02&#10;/register" />
     <MESSAGE value="测试&#10;/验证码" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试&#10;/验证码" />
+    <MESSAGE value="测试&#10;/验证码&#10;继续修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试&#10;/验证码&#10;继续修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -385,8 +434,13 @@
           <line>5</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/method/tool-query.js</url>
+          <line>56</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="2" />
+      <option name="time" value="3" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -411,6 +465,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
+            <element signature="e#6922#7429#0" expanded="false" />
+            <element signature="e#7433#7504#0" expanded="false" />
             <element signature="n#!!block;n#sendVerifyCode#0" expanded="false" />
           </folding>
         </state>
@@ -463,6 +519,8 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="44" selection-start-line="7" selection-start-column="44" selection-end-line="7" selection-end-column="44" />
           <folding>
+            <element signature="e#6922#7429#0" expanded="false" />
+            <element signature="e#7433#7504#0" expanded="false" />
             <element signature="n#!!block;n#sendVerifyCode#0" expanded="false" />
           </folding>
         </state>
@@ -770,17 +828,25 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/method/tool-query.js">
+    <entry file="file://$PROJECT_DIR$/method/config.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8600311">
-          <caret line="71" column="41" selection-start-line="71" selection-start-column="41" selection-end-line="71" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.3732504">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/method/tool.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="52" column="17" selection-start-line="52" selection-start-column="17" selection-end-line="52" selection-end-column="17" />
+          <caret line="37" column="12" selection-start-line="37" selection-start-column="12" selection-end-line="37" selection-end-column="12" />
           <folding>
             <element signature="e#0#38#0" expanded="false" />
             <element signature="e#98#203#0" expanded="false" />
@@ -789,7 +855,6 @@
             <element signature="e#461#669#0" expanded="false" />
             <element signature="e#548#661#0" expanded="false" />
             <element signature="e#676#714#0" expanded="false" />
-            <element signature="e#874#1020#0" expanded="false" />
             <element signature="e#1388#1492#0" expanded="false" />
             <element signature="e#1543#1664#0" expanded="false" />
             <element signature="e#1666#1805#0" expanded="false" />
@@ -803,36 +868,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/method/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3732504">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
+    <entry file="file://$PROJECT_DIR$/method/tool-query.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="46" column="25" selection-start-line="46" selection-start-column="25" selection-end-line="46" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/method/usersHandler.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5806452">
-          <caret line="53" column="23" selection-start-line="53" selection-start-column="23" selection-end-line="53" selection-end-column="23" />
+          <caret line="35" column="12" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
           <folding>
-            <element signature="n#!!block;n#sendVerifyCode#0" expanded="false" />
+            <element signature="e#1735#2964#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/users.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.9085366">
-          <caret line="95" column="0" selection-start-line="95" selection-start-column="0" selection-end-line="95" selection-end-column="0" />
+        <state vertical-scroll-proportion="-9.258064">
+          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/method/usersHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6151419">
+          <caret line="265" column="0" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+          <folding>
+            <element signature="e#6922#7429#0" expanded="false" />
+            <element signature="e#7433#7504#0" expanded="false" />
+            <element signature="n#!!block;n#sendVerifyCode#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

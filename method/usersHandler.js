@@ -58,10 +58,10 @@ function getCode(req,res,account){
 function getCodeEx(req,res,account){
     var sql = 'select Tel from usertable where Account = "'+account+'"';
     tool.queryOnce(sql,function(err,rows){
-        if(err||(rows&&rows[0])){res.send("账户已存在.");return;}
+        if(err||!(rows&&rows[0])){res.send("error");return;}
         // send a code to account 's tel
         var code = Math.round((Math.random() * 10000 + 1000) % 10000);
-        console.log(code+"##########3");
+        console.log(code+"##########");
         sql = 'insert into codetable(Account, Code) values ("'+account+'","'+code+'")';
         tool.queryOnce(sql,function(err,rows){
             if(err||(rows&&rows.affectedRows!=1)){
@@ -79,15 +79,15 @@ function forgetPassWordEx(req,res,account,password,code){
             sql = 'update usertable set PassWord = "' + password +'" where Account = "' + account +'"';
             tool.queryOnce(sql,function(err,rows){
                 if(!err&&(rows&&rows.affectedRows==1)){
-                    sql = 'drop from codetable where account = "' + account +'"';
+                    sql = 'delete from codetable where Account = "' + account +'"';
                     tool.query(sql,function(err,rows){
                        res.send(true);
                     });
-                }
-                res.send("更新失败..");
+                }else{
+                res.send("更新失败..");}
             });
-        }
-        res.send("未找到您的验证码..");
+        }else{
+            res.send("未找到您的验证码..");}
     })
 }
 
@@ -156,9 +156,39 @@ function getCurrentProfit(res,account,productId){
     });
 }
 
-function modifyInformation(res,account,userName,tel,sex,idNumber,headPicture){
-    sqlHelper.updateTemplate("usertable",["UserName","Tel","Sex","IdNumber","HeadPicture"],[userName,tel,sex,idNumber,headPicture],["Account"],[account],"and",function(err,rows){
-       tool.jsonDataOnce(res,err,rows);
+function modifyInformation(res,account,username,tel,opassword,npassword,code){
+    var sql = 'select Account from usertable where account = "'+ account +'" and PassWord = "'+opassword +'"';
+    tool.queryOnce(sql,function(err,rows){
+       if(!err&&rows&&rows[0]){
+            sql = 'select Account from codetable where Account="' + account +'" and Code = "' + code + '"';
+           tool.queryOnce(sql,function(err,rows){
+               if(!err&&rows&&rows[0]){
+                   sqlHelper.updateTemplate("usertable",["UserName","Tel","PassWord"],[username,tel,npassword],["Account"],[account],"and",function(err,rows,fileds){
+                       //tool.jsonDataOnce(res,err,rows);
+                       console.log("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
+                       if(!err&&rows&&rows.affectedRows==1){
+                            sql = 'delete from codetable where Account= "'+account + '"';
+                           tool.queryOnce(sql,function(err,rows){
+                               if(!err&&rows){
+                                   res.send(true);
+                               }else{
+                                   console.log("ordertable 后台更新出错啦.....");
+                                   res.send(true);
+                               }
+                           })
+                       }else{
+                           res.send("更新失败");
+                       }
+                   });
+               }
+               else{
+                   res.send("验证码不对..")
+               }
+           })
+       }else{
+           res.send("密码不对..")
+       }
+
     });
 }
 
@@ -219,7 +249,20 @@ function getAllFriends(res,account,index){
 }
 
 function getMyOrders(res,account){
-    var sql = 'select '
+    var sql = 'select OrderId,BuyTime,ProductId from ordertable where BuyUserAccount ="' + account + '"';
+    console.log(sql);
+    tool.queryOnce(sql,function(err,rows){
+        if(!err&&rows&&rows[0]){
+
+            res.end();
+        }else{
+            res.json([]);}
+    })
+}
+
+function getProductNameById(array,index,callback){
+    var id = array.pop().ProductId;
+    var sql = 'select ProductName from producttable where ProductId = "' + id + '"';
 }
 
 
@@ -258,7 +301,7 @@ exports.getCodeEx               = getCodeEx;
 
 exports.forgetPassWordEx        = forgetPassWordEx;
 
-
+exports.getMyOrders              = getMyOrders;
 ///////////////// not 实现
 function sendVerifyCode(res,account){
 

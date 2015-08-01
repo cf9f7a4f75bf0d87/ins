@@ -86,10 +86,20 @@ router.get('/products',function(req,res){
 router.get('/setSession',function(req,res){
     req.session.test = "aaa";
     res.send("ok");
-})
+});
 
 router.get('/getSession',function(req,res){
     console.log(req.session.test);
     res.send(req.session.test + "##");
-})
+});
+
+
+router.get('/modifyInformation',function(req,res){
+    handler.modifyInformation(res,req.body.username||"",req.body.name,req.body.tel,req.body.oPassword,req.body,nPassword,req.body.code);
+});
+
+router.get('/myOrders',function(req,res){
+    handler.getMyOrders(res,req.query.account||"0");
+});
+
 module.exports = router;

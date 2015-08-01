@@ -1,4 +1,6 @@
-var tool = "./tool.js";
+var tool = require("./tool.js");
+
+
 //sql example sql = "select userName where userId = '"
 //              queryArray = [1,2,3]
 var queryData = function(conn,sql,queryArray,data,callback){
@@ -37,29 +39,31 @@ var insertTemplate = function(table,insertFields,valueFields,join,callback){
 };
 
 var updateTemplate = function(table,updateFields,updateValueFields,conditionFields,conditionValueFields,join,callback) {
-    if (updateFields.length != valueFields.length || conditionFields.length != conditionValueFields.length) {
+    if (updateFields.length != updateValueFields.length || conditionFields.length != conditionValueFields.length) {
         var err = "updateTemplate Error: length is not equal";
         console.log(err);
         callback(err, null);
         return;
-    }
-    var update='',condition = '';
-    for(var i = 0; i< updateFields.length;i++){
-        if(i==updateFields.length-1){
-            update += updateFields[i] + ' = "' + updateValueFields[i] +'"';
-            for(var j = 0;j<conditionFields.length;j++){
-                if(i==conditionFields.length-1) {
-                    condition += conditionFields[i] + ' = "' + conditionValueFields[i] + '"';
-                    var sql = "update " + table + " set " + update + " where " + condition;
-                    tool.query(sql,callback);return;
+    } else {
+        var update = '', condition = '';
+        for (var i = 0; i < updateFields.length; i++) {
+            if (i == updateFields.length - 1) {
+                update += updateFields[i] + ' = "' + updateValueFields[i] + '"';
+                for (var j = 0; j < conditionFields.length; j++) {
+                    if (j == conditionFields.length - 1) {
+                        condition += conditionFields[j] + ' = "' + conditionValueFields[j] + '"';
+                        var sql = "update " + table + " set " + update + " where " + condition;
+                        console.log(sql);
+                        tool.queryOnce(sql,callback);
+                        return;
+                    } else {
+                        condition += conditionFields[i] + ' = "' + conditionValueFields[i] + '" ' + join + ' ';
+                    }
                 }
-                condition += conditionFields[i] + ' = "' + conditionValueFields[i] + '" '+ join +' ';
             }
+            update += updateFields[i] + ' = "' + updateValueFields[i] + '",';
         }
-        update += updateFields[i] + ' = "' + updateValueFields[i] +'",';
     }
-
-
 };
 
 // recursive query by a queryArray
