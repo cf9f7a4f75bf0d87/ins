@@ -79,7 +79,7 @@ router.post('/introduce',function(req,res,next){
 });
 
 router.get('/products',function(req,res){
-    handler.getProductExplain(res,req.body.productId||"");
+    handler.getProductExplain(res,req.query.productId||"");
 });
 
 

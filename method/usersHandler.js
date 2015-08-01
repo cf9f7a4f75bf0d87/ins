@@ -50,7 +50,7 @@ function getCode(req,res,account){
         // send a code to account 's tel
         var code = (Math.random() * 10000 + 1000) % 10000;
         req.session.code = code;
-        console.log(req.session.code+"##########3");
+        console.log(code+"##########3");
         res.json(true);
     })
 }
@@ -61,7 +61,7 @@ function getCodeEx(req,res,account){
         if(err||(rows&&rows[0])){res.send("账户已存在.");return;}
         // send a code to account 's tel
         var code = Math.round((Math.random() * 10000 + 1000) % 10000);
-        console.log(req.session.code+"##########3");
+        console.log(code+"##########3");
         sql = 'insert into codetable(Account, Code) values ("'+account+'","'+code+'")';
         tool.queryOnce(sql,function(err,rows){
             if(err||(rows&&rows.affectedRows!=1)){
