@@ -32,9 +32,8 @@ var query = function(query,deal){
 // one connection one query
 var queryOnce = function(query,deal){
     pool.getConnection(function(err,conn){
-        if(err){console.log(err);}
         conn.query(query,function(err,rows,fields){
-            conn.release();
+            conn.release();console.log(err+ " //// " +rows);
             if(err){console.log(err);}
             deal(err,rows,fields);
         });

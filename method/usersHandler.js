@@ -50,11 +50,46 @@ function getCode(req,res,account){
         // send a code to account 's tel
         var code = (Math.random() * 10000 + 1000) % 10000;
         req.session.code = code;
-        console.log(req.session.code);
+        console.log(req.session.code+"##########3");
         res.json(true);
     })
 }
 
+function getCodeEx(req,res,account){
+    var sql = 'select Tel from usertable where Account = "'+account+'"';
+    tool.queryOnce(sql,function(err,rows){
+        if(err||(rows&&rows[0])){res.send("账户已存在.");return;}
+        // send a code to account 's tel
+        var code = Math.round((Math.random() * 10000 + 1000) % 10000);
+        console.log(req.session.code+"##########3");
+        sql = 'insert into codetable(Account, Code) values ("'+account+'","'+code+'")';
+        tool.queryOnce(sql,function(err,rows){
+            if(err||(rows&&rows.affectedRows!=1)){
+                res.send("网络故障,请重按");return;
+            }
+            res.send(true);
+        })
+    })
+}
+
+function forgetPassWordEx(req,res,account,password,code){
+    var sql = 'select Code from codetable where Account = "' + account +'" and Code = "' + code + '"';
+    tool.queryOnce(sql,function(err,rows){
+        if(!err&&(rows&&rows.affectedRows==1)){
+            sql = 'update usertable set PassWord = "' + password +'" where Account = "' + account +'"';
+            tool.queryOnce(sql,function(err,rows){
+                if(!err&&(rows&&rows.affectedRows==1)){
+                    sql = 'drop from codetable where account = "' + account +'"';
+                    tool.query(sql,function(err,rows){
+                       res.send(true);
+                    });
+                }
+                res.send("更新失败..");
+            });
+        }
+        res.send("未找到您的验证码..");
+    })
+}
 
 function forgetPassWord(req,res,account,password,code){
     console.log(req.session.code + "*************");
@@ -195,7 +230,7 @@ exports.userLogin               = userLogin;
 // register
 exports.register                = register;
 // send check code
-exports.getcode                 = getCode;
+exports.getCode                 = getCode;
 // verify check code
 exports.forgetPassWord          = forgetPassWord;
 // modify password
@@ -218,6 +253,12 @@ exports.getHPicByUsername       = getHPicByUsername;
 exports.readHPicByUsername      = readHPicByUsername;
 
 exports.getProductExplain       = getProductExplain;
+
+exports.getCodeEx               = getCodeEx;
+
+exports.forgetPassWordEx        = forgetPassWordEx;
+
+
 ///////////////// not 实现
 function sendVerifyCode(res,account){
 

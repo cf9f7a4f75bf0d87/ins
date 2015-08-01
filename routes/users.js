@@ -57,15 +57,13 @@ router.post('/headPicture',function(req,res){
 
 
 router.post('/forgetPassword',function(req,res){
-    handler.forgetPassWord(req, res, req.body.username||"", req.body.password, req.body.code);
+    handler.forgetPassWordEx(req, res, req.body.username||"", req.body.password, req.body.code);
 });
 
 router.post('/getCode',function(req,res){
-    handler.getcode(req,res,req.body.username||"");
+    handler.getCodeEx(req,res,req.body.username||"");
 });
-/**
- * get insurance list
- */
+
 router.get('/list',function(req,res,next){
     handler.list(req.query.index||0,res);
 });
@@ -84,4 +82,14 @@ router.get('/products',function(req,res){
     handler.getProductExplain(res,req.body.productId||"");
 });
 
+
+router.get('/setSession',function(req,res){
+    req.session.test = "aaa";
+    res.send("ok");
+})
+
+router.get('/getSession',function(req,res){
+    console.log(req.session.test);
+    res.send(req.session.test + "##");
+})
 module.exports = router;
