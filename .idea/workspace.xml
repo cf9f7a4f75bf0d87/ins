@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46e5e570-07e2-46ce-a18f-ef950e3d2534" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/method/tool-query.js" afterPath="$PROJECT_DIR$/method/tool-query.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/users.js" afterPath="$PROJECT_DIR$/routes/users.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/method/usersHandler.js" afterPath="$PROJECT_DIR$/method/usersHandler.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
@@ -26,11 +25,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="users.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/routes/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-9.258064">
-              <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.81072557">
+              <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -73,11 +72,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="usersHandler.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="usersHandler.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/method/usersHandler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.6151419">
-              <caret line="265" column="0" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+            <state vertical-scroll-proportion="-9.258064">
+              <caret line="313" column="48" selection-start-line="313" selection-start-column="48" selection-end-line="313" selection-end-column="48" />
               <folding>
                 <element signature="e#6922#7429#0" expanded="false" />
                 <element signature="e#7433#7504#0" expanded="false" />
@@ -375,7 +374,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438405894604</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="测试&#10;/修改用户信息&#10;继续修改">
+      <created>1438414204343</created>
+      <option name="number" value="00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1438414204343</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -424,7 +429,8 @@
     <MESSAGE value="测试02&#10;/register" />
     <MESSAGE value="测试&#10;/验证码" />
     <MESSAGE value="测试&#10;/验证码&#10;继续修改" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试&#10;/验证码&#10;继续修改" />
+    <MESSAGE value="测试&#10;/修改用户信息&#10;继续修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试&#10;/修改用户信息&#10;继续修改" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -878,23 +884,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.258064">
-          <caret line="104" column="0" selection-start-line="104" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/method/usersHandler.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6151419">
-          <caret line="265" column="0" selection-start-line="265" selection-start-column="0" selection-end-line="265" selection-end-column="0" />
+        <state vertical-scroll-proportion="-9.258064">
+          <caret line="313" column="48" selection-start-line="313" selection-start-column="48" selection-end-line="313" selection-end-column="48" />
           <folding>
             <element signature="e#6922#7429#0" expanded="false" />
             <element signature="e#7433#7504#0" expanded="false" />
             <element signature="n#!!block;n#sendVerifyCode#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.81072557">
+          <caret line="103" column="0" selection-start-line="103" selection-start-column="0" selection-end-line="103" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

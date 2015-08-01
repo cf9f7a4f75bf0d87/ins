@@ -94,12 +94,16 @@ router.get('/getSession',function(req,res){
 });
 
 
-router.get('/modifyInformation',function(req,res){
-    handler.modifyInformation(res,req.body.username||"",req.body.name,req.body.tel,req.body.oPassword,req.body,nPassword,req.body.code);
+router.post('/modifyInformation',function(req,res){
+    handler.modifyInformation(res,req.body.username||"",req.body.name,req.body.tel,req.body.oPassword,req.body.nPassword,req.body.code);
 });
 
 router.get('/myOrders',function(req,res){
     handler.getMyOrders(res,req.query.account||"0");
 });
+
+router.post('/myProducts',function(req,res){
+    handler.getMyProducts(res,req.body.username,req.body.index);
+})
 
 module.exports = router;

@@ -265,6 +265,14 @@ function getProductNameById(array,index,callback){
     var sql = 'select ProductName from producttable where ProductId = "' + id + '"';
 }
 
+function getMyProducts(res,username,index){
+    if(index<0){console.log("get InsuranceList Error-> index is lt 0");res.send("错误请求");return;}
+    var sql = 'select ProductId, ProductName, ShortExplain, ProductUrl from producttable where ProductId in ( select ProductId from ordertable where BuyUserAccount = "'+username+'"  ) limit ' + index*3 + ",3";
+    tool.queryOnce(sql,function(err,rows){
+        tool.jsonDataOnce(res,err,rows);
+    })
+}
+
 
 // get insurance list
 exports.list                    = list;
@@ -302,6 +310,8 @@ exports.getCodeEx               = getCodeEx;
 exports.forgetPassWordEx        = forgetPassWordEx;
 
 exports.getMyOrders              = getMyOrders;
+
+exports.getMyProducts           = getMyProducts;
 ///////////////// not 实现
 function sendVerifyCode(res,account){
 
