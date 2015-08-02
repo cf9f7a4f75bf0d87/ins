@@ -53,6 +53,21 @@ var isAccountExist = function(account,callback){
     })
 };
 
+var isUpdate = function(err,rows,callback){
+    if(!err&&rows&&rows.affectedRows==1){
+        callback(true);
+    }else{
+        callback(false);
+    }
+};
+
+var isUpdateOnce = function(res,err,rows){
+    if(!(rows&&rows.affectedRows==1)){
+        rows = {};
+    }
+    jsonDataOnce(res,err,rows);
+}
+
 
 /**
  * pass data to a view
@@ -189,7 +204,8 @@ exports.query               = query;
 exports.isAccountExist      = isAccountExist;
 exports.queryOnce           = queryOnce;
 exports.queryMulti          = queryMulti;
-
+exports.isUpdate            = isUpdate;
+exports.isUpdateOnce        = isUpdateOnce;
 
 /////////////////Method About Unit Test//////////////////
 

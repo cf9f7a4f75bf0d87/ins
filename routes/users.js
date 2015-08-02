@@ -40,21 +40,6 @@ router.post('/headPicture',function(req,res){
     handler.getHPicByUsername(res,req.body.username||"");
 });
 
-//router.post('/register',function(req,res,next){
-//    var username = req.body.UserName;
-//    var password = req.body.PassWord;
-//    var tel      = req.body.Tel;
-//    var sex      = req.body.Sex;
-//    var idNumber = req.body.IdNumber;
-//    var headPic  = req.body.HeadPicture;
-//    if(username&&password&&tel&&sex&&idNumber&&headPic){
-//        handler.register(res,username,password,tel,sex,idNumber,headPic);
-//    }else{
-//        res.render('error',{message:"some area is empty"});
-//    }
-//
-//});
-
 
 router.post('/forgetPassword',function(req,res){
     handler.forgetPassWordEx(req, res, req.body.username||"", req.body.password, req.body.code);
@@ -97,13 +82,21 @@ router.get('/getSession',function(req,res){
 router.post('/modifyInformation',function(req,res){
     handler.modifyInformation(res,req.body.username||"",req.body.name,req.body.tel,req.body.oPassword,req.body.nPassword,req.body.code);
 });
-
-router.get('/myOrders',function(req,res){
-    handler.getMyOrders(res,req.query.account||"0");
-});
+//
+//router.get('/myOrders',function(req,res){
+//    handler.getMyOrders(res,req.query.account||"0");
+//});
 
 router.post('/myProducts',function(req,res){
     handler.getMyProducts(res,req.body.username,req.body.index);
+});
+
+router.post('/myProfit',function(req,res){
+    handler.getMyProfit(res,req.body.username||"",req.body.productId||"");
+});
+
+router.post('/addInsuredPeople',function(req,res){
+    handler.addInsuredPeople();
 })
 
 module.exports = router;

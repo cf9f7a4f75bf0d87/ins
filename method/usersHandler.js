@@ -203,7 +203,6 @@ function getHPicByUsername(res,username){
     console.log(username);
     var sql = 'select HeadPicture from usertable where Account = "' + username + '"';
     tool.queryOnce(sql,function(err,rows){
-        console.log(err +"  " + rows);
         var data= rows?rows[0]:null;
         tool.jsonDataOnce(res,err,data);
     });
@@ -232,14 +231,12 @@ function getProductExplain(res,productId){
 
 }
 
-
 function getAllProfits(res,account,index){
     var sql = 'select NowIncome from ordertable where BuyUserAccount = "'+account +'" limit ' + index*3 +','+ index*3+2;
     tool.queryOnce(sql,function(err,rows){
         tool.jsonDataOnce(res,err,tool.null2arr(rows));
     });
 }
-
 
 function getAllFriends(res,account,index){
     var sql = 'select InsuredName,InsuredIdNumber from insuredpeopletable where BuyUserAccount ="'+ account +'" limit ' + index * 3+','+ index*3+2;
@@ -248,29 +245,49 @@ function getAllFriends(res,account,index){
     });
 }
 
-function getMyOrders(res,account){
-    var sql = 'select OrderId,BuyTime,ProductId from ordertable where BuyUserAccount ="' + account + '"';
-    console.log(sql);
-    tool.queryOnce(sql,function(err,rows){
-        if(!err&&rows&&rows[0]){
+//function getMyOrders(res,account){
+//    var sql = 'select OrderId,BuyTime,ProductId from ordertable where BuyUserAccount ="' + account + '"';
+//    console.log(sql);
+//    tool.queryOnce(sql,function(err,rows){
+//        if(!err&&rows&&rows[0]){
+//
+//            res.end();
+//        }else{
+//            res.json([]);}
+//    })
+//}
 
-            res.end();
-        }else{
-            res.json([]);}
-    })
-}
-
-function getProductNameById(array,index,callback){
-    var id = array.pop().ProductId;
-    var sql = 'select ProductName from producttable where ProductId = "' + id + '"';
-}
 
 function getMyProducts(res,username,index){
     if(index<0){console.log("get InsuranceList Error-> index is lt 0");res.send("错误请求");return;}
     var sql = 'select ProductId, ProductName, ShortExplain, ProductUrl from producttable where ProductId in ( select ProductId from ordertable where BuyUserAccount = "'+username+'"  ) limit ' + index*3 + ",3";
     tool.queryOnce(sql,function(err,rows){
-        tool.jsonDataOnce(res,err,rows);
+        tool.jsonDataOnce(res,err,tool.null2arr(rows));
+    });
+}
+
+
+function getMyProfit(res,username,productId){
+    var sql = 'select BuyTime, NowIncome where (ProductId,BuyUserAccount) = ("' + username + '","'+productId +'")';
+    tool.queryOnce(sql,function(err,rows){
+        tool.jsonData(res,err,rows?rows[0]:{});
+    });
+}
+
+
+
+
+///////////////////////////关于联系人的函数///////////////////
+function addInsuredPeople(res,insuredName,insuredIdNumber,account,sex,tel,birthday){
+    var sql = 'insert into insuredpeopletable (InsuredName,InsuredIdNumber,BuyUserAccount,Sex,Tel,Birthday) values( "'+ insuredName +  '","' +
+        insuredIdNumber + '","' + account + '","' + sex  + '","' + tel  + '","' + birthday +'")';
+    tool.queryOnce(sql,function(err,rows){
+        tool.isUpdate(err,rows,res.send);
     })
+}
+
+function modifyInsuredPeople(res,insuredName,insuredIdNumber,account,sex,tel,birthday){
+
 }
 
 
@@ -309,9 +326,20 @@ exports.getCodeEx               = getCodeEx;
 
 exports.forgetPassWordEx        = forgetPassWordEx;
 
-exports.getMyOrders              = getMyOrders;
+//exports.getMyOrders              = getMyOrders;
 
 exports.getMyProducts           = getMyProducts;
+
+exports.getMyProfit             = getMyProfit;
+
+
+////////////////关于联系人的函数////////////////
+exports.addInsuredPeople        = addInsuredPeople;
+
+
+
+
+
 ///////////////// not 实现
 function sendVerifyCode(res,account){
 
