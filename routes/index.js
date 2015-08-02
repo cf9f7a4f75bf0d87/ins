@@ -18,7 +18,9 @@ router.get('/login',function(req,res,next){
 });
 
 router.get('/test',function(req,res){
-  handler.getInsuredPeoplelist(res, "1");
+  //handler.getInsuredPeoplelist(res, "1");
+  //handler.modifyInsuredPeople(res,"test","test","1","男","111","unknown",4);
+  //handler.removeInsuredPeople(res,"1",4);
 });
 
 module.exports = router;

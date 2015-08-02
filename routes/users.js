@@ -92,7 +92,7 @@ router.get('/myProfit',function(req,res){
 });
 
 
-router.get('/getInsuredPeoplelist', function (req, res) {
+router.post('/getInsuredPeoplelist', function (req, res) {
     handler.getInsuredPeoplelist(res, req.body.username || "",req.body.index||0);
 });
 
@@ -101,7 +101,11 @@ router.post('/addInsuredPeople',function(req,res){
 });
 
 router.post('/modifyInsuredPeople',function(req,res){
-    handler.modifyInsuredPeople(res,req.body.insuredPeopleName||"unknown",req.body.insuredIdNumber,req.body.username||"",req.body.sex,req.body.tel,req.body.birthday);
+    handler.modifyInsuredPeople(res,req.body.insuredPeopleName||"unknown",req.body.insuredIdNumber,req.body.username||"",req.body.sex,req.body.tel,req.body.birthday,req.body.insuredId||"");
+});
+
+router.post('/removeInsuredPeople',function(req,res){
+    handler.removeInsuredPeople(res,req.body.username||"",req.body.insuredId||"");
 });
 
 module.exports = router;

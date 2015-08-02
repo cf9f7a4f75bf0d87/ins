@@ -279,7 +279,7 @@ function getMyProfit(res,username,productId){
 
 ///////////////////////////关于联系人的函数///////////////////
 function getInsuredPeoplelist(res,username,index){
-    sqlHelper.selectTemplate("insuredpeopletable",["InsuredName","InsuredIdNumber","Sex","Tel","Birthday"],["BuyUserAccount"],[username],"and",function(err,rows){
+    sqlHelper.selectTemplate("insuredpeopletable",["InsuredId","InsuredName","InsuredIdNumber","Sex","Tel","Birthday"],["BuyUserAccount"],[username],"and",function(err,rows){
         tool.jsonDataOnce(res,err,tool.null2arr(rows));
     })
 }
@@ -297,14 +297,19 @@ function addInsuredPeople(res,insuredName,insuredIdNumber,account,sex,tel,birthd
     })
 }
 
-function modifyInsuredPeople(res,insuredName,insuredIdNumber,account,sex,tel,birthday){
-    sqlHelper.updateTemplate('insuredpeopletable',["InsuredName","InsuredIdNumber","Sex","Tel","Birthday"],[insuredName,insuredIdNumber,sex,tel,birthday],["Account"],[account],"and",function(err,rows){
+function modifyInsuredPeople(res,insuredName,insuredIdNumber,account,sex,tel,birthday,insuredId){
+    sqlHelper.updateTemplate('insuredpeopletable',["InsuredName","InsuredIdNumber","Sex","Tel","Birthday"],[insuredName,insuredIdNumber,sex,tel,birthday],["BuyUserAccount","InsuredId"],[account,insuredId],"and",function(err,rows){
         tool.isUpdate(err,rows,function(result){
             res.send(result);
         });
     });
 }
 
+function removeInsuredPeople(res,account,insuredId){
+    sqlHelper.deleteTemplate("insuredpeopletable",["BuyUserAccount","InsuredId"],[account,insuredId],"and",function(result){
+        res.send(result);
+    })
+}
 
 // get insurance list
 exports.list                    = list;
@@ -353,7 +358,7 @@ exports.getInsuredPeoplelist    = getInsuredPeoplelist;
 
 exports.addInsuredPeople        = addInsuredPeople;
 exports.modifyInsuredPeople     = modifyInsuredPeople;
-
+exports.removeInsuredPeople     = removeInsuredPeople;
 
 
 
