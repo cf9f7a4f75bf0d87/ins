@@ -82,21 +82,26 @@ router.get('/getSession',function(req,res){
 router.post('/modifyInformation',function(req,res){
     handler.modifyInformation(res,req.body.username||"",req.body.name,req.body.tel,req.body.oPassword,req.body.nPassword,req.body.code);
 });
-//
-//router.get('/myOrders',function(req,res){
-//    handler.getMyOrders(res,req.query.account||"0");
-//});
 
 router.post('/myProducts',function(req,res){
     handler.getMyProducts(res,req.body.username,req.body.index);
 });
 
-router.post('/myProfit',function(req,res){
-    handler.getMyProfit(res,req.body.username||"",req.body.productId||"");
+router.get('/myProfit',function(req,res){
+    handler.getMyProfit(res,req.query.username||"",req.query.productId||"");
+});
+
+
+router.get('/getInsuredPeoplelist', function (req, res) {
+    handler.getInsuredPeoplelist(res, req.body.username || "",req.body.index||0);
 });
 
 router.post('/addInsuredPeople',function(req,res){
-    handler.addInsuredPeople();
-})
+    handler.addInsuredPeople(res,req.body.insuredPeopleName||"unknown",req.body.insuredIdNumber,req.body.username||"",req.body.sex,req.body.tel,req.body.birthday);
+});
+
+router.post('/modifyInsuredPeople',function(req,res){
+    handler.modifyInsuredPeople(res,req.body.insuredPeopleName||"unknown",req.body.insuredIdNumber,req.body.username||"",req.body.sex,req.body.tel,req.body.birthday);
+});
 
 module.exports = router;

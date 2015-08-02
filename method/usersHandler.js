@@ -268,9 +268,9 @@ function getMyProducts(res,username,index){
 
 
 function getMyProfit(res,username,productId){
-    var sql = 'select BuyTime, NowIncome where (ProductId,BuyUserAccount) = ("' + username + '","'+productId +'")';
+    var sql = 'select BuyTime, NowIncome from ordertable where (ProductId,BuyUserAccount) = ("' + productId + '","'+username+'")';
     tool.queryOnce(sql,function(err,rows){
-        tool.jsonData(res,err,rows?rows[0]:{});
+        tool.jsonDataOnce(res,err,rows?rows[0]:{});
     });
 }
 
@@ -278,16 +278,31 @@ function getMyProfit(res,username,productId){
 
 
 ///////////////////////////关于联系人的函数///////////////////
+function getInsuredPeoplelist(res,username,index){
+    sqlHelper.selectTemplate("insuredpeopletable",["InsuredName","InsuredIdNumber","Sex","Tel","Birthday"],["BuyUserAccount"],[username],"and",function(err,rows){
+        tool.jsonDataOnce(res,err,tool.null2arr(rows));
+    })
+}
+
+
 function addInsuredPeople(res,insuredName,insuredIdNumber,account,sex,tel,birthday){
-    var sql = 'insert into insuredpeopletable (InsuredName,InsuredIdNumber,BuyUserAccount,Sex,Tel,Birthday) values( "'+ insuredName +  '","' +
+    var sql = 'insert into insuredpeopletable(InsuredName,InsuredIdNumber,BuyUserAccount,Sex,Tel,Birthday) values( "'+ insuredName +  '","' +
         insuredIdNumber + '","' + account + '","' + sex  + '","' + tel  + '","' + birthday +'")';
+    console.log(sql);
     tool.queryOnce(sql,function(err,rows){
-        tool.isUpdate(err,rows,res.send);
+        console.log(err + "   " + rows);
+        tool.isUpdate(err,rows,function(result){
+            res.send(result);
+        });
     })
 }
 
 function modifyInsuredPeople(res,insuredName,insuredIdNumber,account,sex,tel,birthday){
-
+    sqlHelper.updateTemplate('insuredpeopletable',["InsuredName","InsuredIdNumber","Sex","Tel","Birthday"],[insuredName,insuredIdNumber,sex,tel,birthday],["Account"],[account],"and",function(err,rows){
+        tool.isUpdate(err,rows,function(result){
+            res.send(result);
+        });
+    });
 }
 
 
@@ -334,8 +349,10 @@ exports.getMyProfit             = getMyProfit;
 
 
 ////////////////关于联系人的函数////////////////
-exports.addInsuredPeople        = addInsuredPeople;
+exports.getInsuredPeoplelist    = getInsuredPeoplelist;
 
+exports.addInsuredPeople        = addInsuredPeople;
+exports.modifyInsuredPeople     = modifyInsuredPeople;
 
 
 
