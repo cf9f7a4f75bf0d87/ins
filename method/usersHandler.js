@@ -313,9 +313,13 @@ function removeInsuredPeople(res,account,insuredId){
 
 
 ////////////////订单部分/////////////////
-//function getOrderList(res,account){
-//    var sql = 'select (OrderId,BuyUserAccount,ProductName,InsuredName,BuyTime,NowIncome) from ordertable o,usertable u, producttable p where o.BuyUserAccount="'+account+'", o.BuyUserAccount = '
-//}
+function getOrderList(res,account){
+    var sql = 'select OrderId,BuyUserAccount,ProductName,InsuredPeopleName,BuyTime,NowIncome from ordertable o,usertable u, producttable p where o.BuyUserAccount="'+account+'" and o.BuyUserAccount = u.Account and o.ProductId = p.ProductId';
+    console.log(sql);
+    tool.queryOnce(sql,function(err,rows){
+        tool.jsonDataOnce(res,err,rows);
+    });
+}
 
 
 function addOrder(res,account,insuredId,productId){
@@ -340,6 +344,19 @@ function removeOrder(res,account,orderId){
         res.send(result);
     });
 }
+
+///////////////个人的喜好////////////////
+function getPersonalHobby(res,data){
+    var data = data;
+    console.log(data);
+    if(data){
+        res.send(true);
+    }else{
+        res.send(false);
+    }
+}
+
+
 
 // get insurance list
 exports.list                    = list;
@@ -391,11 +408,17 @@ exports.modifyInsuredPeople     = modifyInsuredPeople;
 exports.removeInsuredPeople     = removeInsuredPeople;
 
 //////////////////关于订单的函数////////////////
+exports.getOrderList            = getOrderList;
+
 exports.addOrder                = addOrder;
 exports.modifyOrder             = modifyOrder;
 exports.modifyOrderTime         = modifyOrderTime;
 
 exports.removeOrder             = removeOrder;
+
+
+//////////////////////算法部分/////////////////
+exports.getPersonalHobby        = getPersonalHobby;
 
 ///////////////// not 实现
 function sendVerifyCode(res,account){

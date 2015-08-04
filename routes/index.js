@@ -25,6 +25,8 @@ router.get('/test',function(req,res){
   //handler.addOrder(res,"1","1","1");
   //handler.modifyOrder(res,"2","1","1");
   //handler.removeOrder(res,"1","2");
+
+    handler.getOrderList(res,"1");
 });
 
 module.exports = router;

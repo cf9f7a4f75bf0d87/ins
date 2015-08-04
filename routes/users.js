@@ -128,7 +128,10 @@ router.post('/removeOrder', function (req, res) {
     handler.removeOrder(res, req.body.username || "", req.body.orderId || "");
 });
 
-
+////////////算法//////////
+router.post('/getPersonalData', function (req, res) {
+    handler.getPersonalHobby(res, req.body.data);
+});
 
 
 module.exports = router;
