@@ -92,7 +92,9 @@ router.get('/myProfit',function(req,res){
 });
 
 
-router.post('/getInsuredPeoplelist', function (req, res) {
+
+//我的联系人部分
+router.post('/getInsuredPeopleList', function (req, res) {
     handler.getInsuredPeoplelist(res, req.body.username || "",req.body.index||0);
 });
 
@@ -107,5 +109,26 @@ router.post('/modifyInsuredPeople',function(req,res){
 router.post('/removeInsuredPeople',function(req,res){
     handler.removeInsuredPeople(res,req.body.username||"",req.body.insuredId||"");
 });
+
+////////////////////订单部分////////////////////
+router.post('/getOrderList',function(req,res){
+    handler.getOrderList(res,req.body.username||"");
+});
+
+
+router.post('/addOrder',function(req,res){
+    handler.addOrder(res,req.body.username||"",req.body.insuredId||"",req.body.productId||"");
+});
+
+router.post('/modifyOrder',function(req,res){
+    handler.modifyOrder(res,req.body.orderId||"",req.body.username||"",req.body.nowIncome);
+});
+
+router.post('/removeOrder', function (req, res) {
+    handler.removeOrder(res, req.body.username || "", req.body.orderId || "");
+});
+
+
+
 
 module.exports = router;

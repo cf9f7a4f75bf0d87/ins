@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46e5e570-07e2-46ce-a18f-ef950e3d2534" name="Default" comment="测试&#10;/联系人列表">
+    <list default="true" id="46e5e570-07e2-46ce-a18f-ef950e3d2534" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/method/tool-query.js" afterPath="$PROJECT_DIR$/method/tool-query.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/users.js" afterPath="$PROJECT_DIR$/routes/users.js" />
@@ -30,18 +30,18 @@
       <file leaf-file-name="users.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/users.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="108" column="3" selection-start-line="108" selection-start-column="3" selection-end-line="108" selection-end-column="3" />
+            <state vertical-scroll-proportion="-5.387097">
+              <caret line="114" column="24" selection-start-line="114" selection-start-column="12" selection-end-line="114" selection-end-column="24" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.7093023">
-              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
               <folding />
             </state>
           </provider>
@@ -84,11 +84,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="usersHandler.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="usersHandler.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/method/usersHandler.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="300" column="170" selection-start-line="300" selection-start-column="170" selection-end-line="300" selection-end-column="170" />
+            <state vertical-scroll-proportion="0.51724136">
+              <caret line="318" column="0" selection-start-line="315" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
               <folding>
                 <element signature="n#!!block;n#modifyInformation#0" expanded="false" />
                 <element signature="e#6922#7429#0" expanded="false" />
@@ -109,21 +109,19 @@
         <entry file="file://$PROJECT_DIR$/method/tool-query.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="98" column="13" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
+              <caret line="99" column="18" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
               <folding>
                 <element signature="e#35#89#0" expanded="false" />
                 <element signature="e#186#429#0" expanded="false" />
                 <element signature="e#311#425#0" expanded="false" />
                 <element signature="e#532#1198#0" expanded="false" />
-                <element signature="e#1298#1386#0" expanded="false" />
-                <element signature="e#1473#1871#0" expanded="false" />
-                <element signature="e#2776#3136#0" expanded="false" />
-                <element signature="e#3142#3277#0" expanded="false" />
-                <element signature="e#3534#3650#0" expanded="false" />
-                <element signature="e#3810#3945#0" expanded="false" />
-                <element signature="e#4306#4379#0" expanded="false" />
-                <element signature="e#4398#4515#0" expanded="false" />
-                <element signature="e#4629#4720#0" expanded="false" />
+                <element signature="e#1291#1379#0" expanded="false" />
+                <element signature="e#1998#2072#0" expanded="false" />
+                <element signature="e#3283#3418#0" expanded="false" />
+                <element signature="e#3674#3790#0" expanded="false" />
+                <element signature="e#3950#4085#0" expanded="false" />
+                <element signature="e#4572#4689#0" expanded="false" />
+                <element signature="e#4803#4894#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -158,10 +156,10 @@
         <option value="$PROJECT_DIR$/test/usersHandlerTest.js" />
         <option value="$PROJECT_DIR$/method/config.js" />
         <option value="$PROJECT_DIR$/method/tool.js" />
-        <option value="$PROJECT_DIR$/method/usersHandler.js" />
         <option value="$PROJECT_DIR$/method/tool-query.js" />
-        <option value="$PROJECT_DIR$/routes/users.js" />
         <option value="$PROJECT_DIR$/routes/index.js" />
+        <option value="$PROJECT_DIR$/routes/users.js" />
+        <option value="$PROJECT_DIR$/method/usersHandler.js" />
       </list>
     </option>
   </component>
@@ -173,9 +171,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="-4" />
+    <option name="y" value="24" />
     <option name="width" value="1366" />
-    <option name="height" value="772" />
+    <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -200,8 +198,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -264,6 +260,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -434,11 +432,17 @@
       <option name="project" value="LOCAL" />
       <updated>1438519120565</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="测试&#10;/联系人的 添加 修改 删除">
+      <created>1438527802392</created>
+      <option name="number" value="00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1438527802392</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-4" width="1366" height="772" extended-state="6" />
+    <frame x="0" y="24" width="1366" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15636635" sideWeight="0.49455675" order="0" side_tool="false" content_ui="combo" />
@@ -446,7 +450,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34108528" sideWeight="0.52562225" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3164933" sideWeight="0.48316252" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4383358" sideWeight="0.48316252" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42199108" sideWeight="0.47437775" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15753938" sideWeight="0.5054432" order="2" side_tool="true" content_ui="tabs" />
@@ -486,7 +490,8 @@
     <MESSAGE value="测试&#10;/修改用户信息&#10;继续修改" />
     <MESSAGE value="测试&#10;/简单的收益测试 第一版" />
     <MESSAGE value="测试&#10;/联系人列表" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试&#10;/联系人列表" />
+    <MESSAGE value="测试&#10;/联系人的 添加 修改 删除" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试&#10;/联系人的 添加 修改 删除" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -498,7 +503,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/method/tool-query.js</url>
-          <line>64</line>
+          <line>66</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
@@ -645,7 +650,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -691,7 +695,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -803,7 +806,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -860,7 +862,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.655527">
           <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -890,7 +891,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -898,14 +898,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3732504">
           <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -934,10 +926,54 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/method/usersHandler.js">
+    <entry file="file://$PROJECT_DIR$/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="300" column="170" selection-start-line="300" selection-start-column="170" selection-end-line="300" selection-end-column="170" />
+          <caret line="45" column="25" selection-start-line="45" selection-start-column="25" selection-end-line="45" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/method/tool-query.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="99" column="18" selection-start-line="99" selection-start-column="18" selection-end-line="99" selection-end-column="18" />
+          <folding>
+            <element signature="e#35#89#0" expanded="false" />
+            <element signature="e#186#429#0" expanded="false" />
+            <element signature="e#311#425#0" expanded="false" />
+            <element signature="e#532#1198#0" expanded="false" />
+            <element signature="e#1291#1379#0" expanded="false" />
+            <element signature="e#1998#2072#0" expanded="false" />
+            <element signature="e#3283#3418#0" expanded="false" />
+            <element signature="e#3674#3790#0" expanded="false" />
+            <element signature="e#3950#4085#0" expanded="false" />
+            <element signature="e#4572#4689#0" expanded="false" />
+            <element signature="e#4803#4894#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="37" selection-start-line="26" selection-start-column="37" selection-end-line="26" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/users.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-5.387097">
+          <caret line="114" column="24" selection-start-line="114" selection-start-column="12" selection-end-line="114" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/method/usersHandler.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.51724136">
+          <caret line="318" column="0" selection-start-line="315" selection-start-column="0" selection-end-line="318" selection-end-column="0" />
           <folding>
             <element signature="n#!!block;n#modifyInformation#0" expanded="false" />
             <element signature="e#6922#7429#0" expanded="false" />
@@ -950,44 +986,6 @@
             <element signature="n#!!block;n#getAllFriends#0" expanded="false" />
             <element signature="n#!!block;n#sendVerifyCode#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/method/tool-query.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="98" column="13" selection-start-line="98" selection-start-column="13" selection-end-line="98" selection-end-column="13" />
-          <folding>
-            <element signature="e#35#89#0" expanded="false" />
-            <element signature="e#186#429#0" expanded="false" />
-            <element signature="e#311#425#0" expanded="false" />
-            <element signature="e#532#1198#0" expanded="false" />
-            <element signature="e#1298#1386#0" expanded="false" />
-            <element signature="e#1473#1871#0" expanded="false" />
-            <element signature="e#2776#3136#0" expanded="false" />
-            <element signature="e#3142#3277#0" expanded="false" />
-            <element signature="e#3534#3650#0" expanded="false" />
-            <element signature="e#3810#3945#0" expanded="false" />
-            <element signature="e#4306#4379#0" expanded="false" />
-            <element signature="e#4398#4515#0" expanded="false" />
-            <element signature="e#4629#4720#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/users.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="108" column="3" selection-start-line="108" selection-start-column="3" selection-end-line="108" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.7093023">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>

@@ -21,6 +21,10 @@ router.get('/test',function(req,res){
   //handler.getInsuredPeoplelist(res, "1");
   //handler.modifyInsuredPeople(res,"test","test","1","男","111","unknown",4);
   //handler.removeInsuredPeople(res,"1",4);
+
+  //handler.addOrder(res,"1","1","1");
+  //handler.modifyOrder(res,"2","1","1");
+  //handler.removeOrder(res,"1","2");
 });
 
 module.exports = router;

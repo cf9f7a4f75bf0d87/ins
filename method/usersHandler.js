@@ -311,6 +311,36 @@ function removeInsuredPeople(res,account,insuredId){
     })
 }
 
+
+////////////////订单部分/////////////////
+//function getOrderList(res,account){
+//    var sql = 'select (OrderId,BuyUserAccount,ProductName,InsuredName,BuyTime,NowIncome) from ordertable o,usertable u, producttable p where o.BuyUserAccount="'+account+'", o.BuyUserAccount = '
+//}
+
+
+function addOrder(res,account,insuredId,productId){
+    sqlHelper.insertTemplate("ordertable",["BuyUserAccount","ProductId","insuredPeopleId","BuyTime","NowIncome"],[account,productId,insuredId,Date.now(),"0"],"and",function(result){
+        res.send(result);
+    });
+}
+function modifyOrder(res,orderId,account,nowIncome){
+    sqlHelper.updateTemplate("ordertable",["nowIncome"],[nowIncome],["OrderId","BuyUserAccount"],[orderId,account],"and",function(result){
+        res.send(result);
+    })
+}
+
+function modifyOrderTime(res,account,insuredId,productId,buyTime,nowIncome){
+    sqlHelper.updateTemplate("ordertable",["BuyTime","nowIncome"],[buyTime,nowIncome],["BuyUserAccount","ProductId","insuredPeopleId"],[account,productId,insuredId],"and",function(result){
+        res.send(result);
+    })
+}
+
+function removeOrder(res,account,orderId){
+    sqlHelper.deleteTemplate("ordertable",["OrderId","BuyUserAccount"],[orderId,account],"and",function(result){
+        res.send(result);
+    });
+}
+
 // get insurance list
 exports.list                    = list;
 // login
@@ -360,7 +390,12 @@ exports.addInsuredPeople        = addInsuredPeople;
 exports.modifyInsuredPeople     = modifyInsuredPeople;
 exports.removeInsuredPeople     = removeInsuredPeople;
 
+//////////////////关于订单的函数////////////////
+exports.addOrder                = addOrder;
+exports.modifyOrder             = modifyOrder;
+exports.modifyOrderTime         = modifyOrderTime;
 
+exports.removeOrder             = removeOrder;
 
 ///////////////// not 实现
 function sendVerifyCode(res,account){

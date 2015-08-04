@@ -29,20 +29,22 @@ var selectTemplateOp = function(table,queryFields,conditionFields,valueFields,jo
     }
 };
 
-var selectTemplate = function(table,queryFields,conditionFields,valueFields,join,option,callback){
+var selectTemplate = function(table,queryFields,conditionFields,valueFields,join,callback){
     selectTemplateOp(table,queryFields,conditionFields,valueFields,join,'',callback)
 };
 
 var insertTemplateOp = function(table,insertFields,valueFields,join,option,callback){
-    if(insertFields.length!=valueFields.length){var err= "insertTemplate Error: length is not equal"; console.log(err);callback(err,null);return; }
+    if(insertFields.length!=valueFields.length){var err= "insertTemplate Error: length is not equal"; console.log(err);callback(err);return; }
     insertFields = insertFields.join(",");
     valueFields = valueFields.join('","');
-    var sql = 'insert into ' + table + ' ' + insertFields + ' values ("' + valueFields + '") ' + option;
+    var sql = 'insert into ' + table + ' (' + insertFields + ') values ("' + valueFields + '") ' + option;
     console.log(sql);
-    tool.queryOnce(sql,callback);
+    tool.queryOnce(sql,function(err,rows){
+        tool.isUpdate(err,rows,callback);
+    });
 };
 
-var insertTemplate = function(table,insertFields,valueFields,join,option,callback){
+var insertTemplate = function(table,insertFields,valueFields,join,callback){
     insertTemplateOp(table,insertFields,valueFields,join,'',callback);
 };
 
@@ -62,7 +64,9 @@ var updateTemplateOp = function(table,updateFields,updateValueFields,conditionFi
                         condition += conditionFields[j] + ' = "' + conditionValueFields[j] + '"';
                         var sql = "update " + table + " set " + update + " where " + condition + " " + option;
                         console.log(sql);
-                        tool.queryOnce(sql,callback);
+                        tool.queryOnce(sql,function(err,rows){
+                            tool.isUpdate(err,rows,callback);
+                        });
                         return;
                     } else {
                         condition += conditionFields[j] + ' = "' + conditionValueFields[j] + '" ' + join + ' ';
@@ -73,7 +77,6 @@ var updateTemplateOp = function(table,updateFields,updateValueFields,conditionFi
         }
     }
 };
-
 
 var updateTemplate = function(table,updateFields,updateValueFields,conditionFields,conditionValueFields,join,callback) {
    updateTemplateOp(table,updateFields,updateValueFields,conditionFields,conditionValueFields,join,"",callback);
@@ -91,6 +94,7 @@ var deleteTemplateOp = function(table,conditionFields,conditionValueFields,join,
             if(i==conditionFields.length-1){
                 condition += conditionFields[i] + '="' + conditionValueFields[i]+ '"';
                 var sql = 'delete from ' + table + ' where ' + condition + ' ' + option;
+                console.log(sql);
                 tool.queryOnce(sql,function(err,rows){
                     tool.isUpdate(err,rows,callback);
                 })
