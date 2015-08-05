@@ -344,6 +344,32 @@ function removeOrder(res,account,orderId){
         res.send(result);
     });
 }
+//////////////////评论部分//////////////////////
+function getCommentList(res,productId,index){
+    sqlHelper.selectTemplateOp('evaluatetable e, usertable u',["UserName","EContent","EvaluateTime"],['e.EUserAccount= u.Account and e.EProductId'],[productId],'and','limit '+index * 3 +', 3',function(err,rows){
+        tool.jsonDataOnce(res,err,rows);
+    })
+}
+
+
+function addComment(res,account,productId,content){
+    sqlHelper.insertTemplate('evaluatetable', ["EUserAccount", "EProductId", "Econtent"], [account, productId, content], "and", function (result) {
+        res.send(result);
+    });
+}
+
+function modifyComment(res,commentId,account,productId,content){
+    sqlHelper.updateTemplate('evaluatetable',['EUserAccount',"EProductId","EContent"],[account,productId,content],["EvaluateId"],[commentId],"and",function(result){
+        res.send(result);
+    })
+}
+
+function removeComment(res,commentId,account){
+    sqlHelper.deleteTemplate('evaluatetable',["EUserAccount","EvaluateId"],[account,commentId],"and",function(result){
+        res.send(result);
+    })
+}
+
 
 ///////////////个人的喜好////////////////
 function getPersonalHobby(res,data){
@@ -416,6 +442,11 @@ exports.modifyOrderTime         = modifyOrderTime;
 
 exports.removeOrder             = removeOrder;
 
+//////////////////评论部分//////////////////////
+exports.getCommentList          = getCommentList;
+exports.addComment              = addComment;
+exports.modifyComment          = modifyComment;
+exports.removeComment           = removeComment;
 
 //////////////////////算法部分/////////////////
 exports.getPersonalHobby        = getPersonalHobby;

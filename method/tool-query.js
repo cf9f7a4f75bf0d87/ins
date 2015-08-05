@@ -22,6 +22,7 @@ var selectTemplateOp = function(table,queryFields,conditionFields,valueFields,jo
         if(i==conditionFields.length-1){
             condition += conditionFields[i] + '= "' + valueFields[i] +'" ';
             var sql = 'select '+ queryFields + ' from ' + table + ' where ' + condition + ' ' + option;
+            console.log(sql);
             tool.queryOnce(sql,callback);
             return;
         }

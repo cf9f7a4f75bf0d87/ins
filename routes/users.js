@@ -128,6 +128,27 @@ router.post('/removeOrder', function (req, res) {
     handler.removeOrder(res, req.body.username || "", req.body.orderId || "");
 });
 
+//////////////评论////////////////////////
+router.post('/getCommentList',function(req,res){
+    handler.getCommentList(res,req.body.productId||"",req.body.index||0);
+});
+
+
+router.post('/addComment', function (req, res) {
+    handler.addComment(res, req.body.username || "", req.body.productId || "", req.body.content || "unknown");
+});
+
+router.post('/modifyComment', function (req, res) {
+    handler.modifyComment(res, req.body.commentId || "", req.body.username || "", req.body.productId, req.body.content);
+});
+
+router.post('/removeComment', function (req, res) {
+    handler.removeComment(res, req.body.commentId, req.body.username);
+});
+
+
+
+
 ////////////算法//////////
 router.post('/getPersonalData', function (req, res) {
     handler.getPersonalHobby(res, req.body.data);
