@@ -2,56 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="46e5e570-07e2-46ce-a18f-ef950e3d2534" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/chrome-big.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/chrome-logo-small.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/chrome-logo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/firefox-big.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/firefox-logo-small.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/firefox-logo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.eot" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.woff" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/ie-big.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/ie-logo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/logo.psd" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/opera-big.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/opera-logo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/safari-big.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/safari-logo-small.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/images/safari-logo.jpg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/MaddProduct.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/MaddUser.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Mindex.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/MmodifyProduct.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/MmodifyUser.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/MproductList.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/MproductList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Mresult.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/Mtest.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/views/MuserList.hbs" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/javascripts/MuserList.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bootstrap-theme.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bootstrap-theme.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bootstrap-theme.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bootstrap.css.map" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bootstrap.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/bootstrap.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/css/bootstrap.min.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/bootstrap.min.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/fonts/glyphicons-halflings-regular.svg" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/routes/manage.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/npm.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/method/tool-handlebars.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/method/tool-response.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app.js" afterPath="$PROJECT_DIR$/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/index.js" afterPath="$PROJECT_DIR$/routes/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/layout.hbs" afterPath="$PROJECT_DIR$/views/layout.hbs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/style.css" afterPath="$PROJECT_DIR$/public/stylesheets/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/method/tool-query.js" afterPath="$PROJECT_DIR$/method/tool-query.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/method/tool.js" afterPath="$PROJECT_DIR$/method/tool.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/method/usersHandler.js" afterPath="$PROJECT_DIR$/method/usersHandler.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="untitled.iws" />
@@ -655,7 +605,13 @@
       <option name="project" value="LOCAL" />
       <updated>1438752885315</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="网站&#10;/用户管理&#10;/产品管理">
+      <created>1440901212790</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1440901212791</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -664,6 +620,7 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20029785" sideWeight="0.49455675" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34108528" sideWeight="0.52562225" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -673,7 +630,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.15753938" sideWeight="0.5054432" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32243684" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -731,7 +687,8 @@
     <MESSAGE value="测试&#10;/提交订单" />
     <MESSAGE value="测试&#10;/获取个人信息" />
     <MESSAGE value="测试&#10;/评论列表和提交评论" />
-    <option name="LAST_COMMIT_MESSAGE" value="测试&#10;/评论列表和提交评论" />
+    <MESSAGE value="网站&#10;/用户管理&#10;/产品管理" />
+    <option name="LAST_COMMIT_MESSAGE" value="网站&#10;/用户管理&#10;/产品管理" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
