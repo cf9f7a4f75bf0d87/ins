@@ -29,7 +29,7 @@ router.get('/test',function(req,res){
     //handler.getOrderList(res,"1");
 
   //handler.getCommentList(res,'1',0);
-  //   handler.addComment(res,"1","1","ssss");
+     handler.addComment(res,"1","1","ssss");
   //handler.modifyComment(res,"1","1","1","test");
   //handler.removeComment(res,"2","1");
 });

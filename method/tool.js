@@ -54,6 +54,7 @@ var isAccountExist = function(account,callback){
 };
 
 var isUpdate = function(err,rows,callback){
+    console.info(err+"()"+rows);
     if(!err&&rows&&rows.affectedRows==1){
         callback(true);
     }else{
@@ -83,6 +84,10 @@ var renderData = function(res,close,err,data,path){
     res.render(path,{data:data});
     console.log(data);
 };
+
+var renderDataOnce = function(res,err,data,path){
+    renderData(res,function(){},err,data,path);
+};
 /**
  * a condition branch to view
  * @param res
@@ -101,6 +106,10 @@ var renderValid = function(res,close,err,invalid,successPath,errorPath){
     }
 };
 
+var returnData = function(err,data,callback){
+    if(err){data =  [];}
+    callback(data);
+};
 
 /**
  * pass data as a json reply
@@ -184,6 +193,7 @@ var null2arr = function(sth){
 ////////////////Method About Render///////////////
 //  render data to a view and close database link
 exports.renderData          = renderData;
+exports.renderDataOnce      = renderDataOnce;
 //  to judge if condition is valid then send result to a new view
 exports.renderValid         = renderValid;
 

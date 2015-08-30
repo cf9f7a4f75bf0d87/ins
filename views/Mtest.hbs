@@ -1,0 +1,231 @@
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#demo-navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand" href="#">One</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="demo-navbar">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#home">综述</a></li>
+                <li><a href="#">特点</a></li>
+                <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">管理<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li> <a href="#user">用户管理</a></li>
+                        <li> <a href="#product">产品管理</a></li>
+                        <li> <a href="#order">订单管理</a></li>
+                        <li> <a href="#manage">消息处理</a></li>
+
+                    </ul>
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+        <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+    </ol>
+
+    <div class="carousel-inner" role="listbox">
+        <div class="item active">
+            <img src="/images/chrome-big.jpg" alt="chrome-logo">
+            <div class="carousel-caption">
+                <h2>Chrome</h2>
+                <p>最前沿的浏览器</p>
+                <p><a class="btn btn-primary btn-lg" href="#" target="_blank" role="button">More</a></p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="/images/firefox-big.jpg" alt="firefox">
+            <div class="carousel-caption">
+                <h2>firefox</h2>
+                <p>很受欢迎的浏览器</p>
+                <p><a class="btn btn-lg btn-primary" href="#" target="_blank" role="button">More</a></p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="/images/ie-big.jpg" alt="ie">
+            <div class="carousel-caption">
+                <h2>ie</h2>
+                <p>我想说,呵呵</p>
+                <p><a class="btn btn-lg btn-primary" href="#" target="_blank" role="button">More</a></p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="/images/opera-big.jpg" alt="opera">
+            <div class="carousel-caption">
+                <h2>opera</h2>
+                <p>挺时尚的浏览器</p>
+                <p><a class="btn btn-lg btn-primary" href="#" target="_blank" role="button">More</a></p>
+            </div>
+        </div>
+        <div class="item">
+            <img src="/images/safari-big.jpg" alt="safari-big">
+            <div class="carousel-caption">
+                <h2>safari</h2>
+                <p>苹果的浏览器,呃</p>
+                <p><a class="btn btn-lg btn-primary" href="#" target="_blank" role="button">More</a></p>
+            </div>
+        </div>
+    </div>
+
+    <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+    <a class="right carousel-control" href="#carousel-example-generic" role="button">
+        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 text-center">
+            <img class="img-circle" src="/images/chrome-logo-small.jpg" alt="chrome">
+            <h2>chrome</h2>
+            <p>流行流行,流行</p>
+            <p><a class="btn btn-default" href="#" target="_blank" role="button">more</a></p>
+        </div>
+        <div class="col-md-4 text-center">
+            <img class="img-circle" src="/images/firefox-logo-small.jpg" alt="firefox">
+            <h2>firefox</h2>
+            <p>还不错,还不错</p>
+            <p><a class="btn btn-default" href="#" target="_blank" role="button">more</a></p>
+        </div>
+        <div class="col-md-4 text-center">
+            <img class="img-circle" src="/images/safari-logo-small.jpg" alt="safari">
+            <h2>safari</h2>
+            <p>没用过,没用过</p>
+            <p><a class="btn btn-default" href="#" target="_blank" role="button">more</a></p>
+        </div>
+    </div>
+    <hr class="divider">
+
+    <!--标签页-->
+    <ul class="nav nav-tabs" role="tablist" id="tab-list">
+        <li class="active"><a  href="#home" role="tab" data-toggle="tab">Home</a></li>
+        <li><a href="#user" role="tab" data-toggle="tab">用户管理</a></li>
+        <li><a href="#order" role="tab" data-toggle="tab">订单管理</a></li>
+        <li><a href="#product" role="tab" data-toggle="tab">产品管理</a></li>
+        <li><a href="#manage" role="tab" data-toggle="tab">监控管理</a></li>
+    </ul>
+
+    <div  class="tab-content">
+        <div class="tab-pane active" id="home">
+            <div class="row feature">
+            <div class="col-md-5">
+                <img class="feature-image img-responsive" src="/images/chrome-logo.jpg" alt="Home">
+            </div>
+            <div class="col-md-7">
+                <h2 class="feature-heading">Home <span class="text-muted small">description</span></h2>
+                <p class="lead">this is some description</p>
+            </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="user">
+           <div class="row feature">
+            <div class="col-md-7">
+                <h2 class="feature-heading">用户管理<span class="text-muted small">简介</span></h2>
+                <p class="lead">this is some description</p>
+            </div>
+            <div class="col-md-5">
+                <img class="feature-image img-responsive" src="/images/firefox-logo.jpg" alt="User">
+            </div>
+           </div>
+        </div>
+        <div class="tab-pane" id="order">
+            <div class="row feature">
+            <div class="col-md-5">
+                <img class="feature-image img-responsive" src="/images/ie-logo.jpg" alt="Order">
+            </div>
+            <div class="col-md-7">
+                <h2 class="feature-heading">订单<span class="text-muted small">简介</span></h2>
+                <p class="lead">this is some description</p>
+            </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="product">
+            <div class="row feature">
+            <div class="col-md-7">
+                <h2 class="feature-heading">产品<span class="text-muted small">简介</span></h2>
+                <p class="lead">this is some description</p>
+            </div>
+            <div class="col-md-5">
+                <img class="feature-image img-responsive" src="/images/safari-logo.jpg">
+            </div>
+            </div>
+        </div>
+        <div class="tab-pane" id="manage">
+            <div class="row feature">
+            <div class="col-md-5">
+                <img class="feature-image img-responsive" src="/images/opera-logo.jpg" alt="manage">
+            </div>
+            <div class="col-md-7">
+                <h2 class="feature-heading">监控<span class="text-muted small">简介</span></h2>
+                <p class="lead">this is some description</p>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider">
+
+    <footer>
+        <p class="pull-right" style="border:3px black solid;padding:4px;border-radius:4px;"><a href="#top">return top</a></p>
+        <p>From : Little Fire</p>
+    </footer>
+</div>
+
+<div class="modal modal-fade" id="about">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="model-title" >关于</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-7">
+                        <h2 class="feature-heading" style="margin-top:60px;">啊!保!<span class="small">保险推荐爱屁屁</span></h2>
+                        <p>巴拉巴拉巴拉巴拉...</p>
+                        <p class="text-right"> by: Little Fire</p>
+                    </div>
+                    <div class="col-md-5">
+                        <img class="img-responsive feature-image" src="/images/opera-logo.jpg" />
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">你们做的不错</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+        $("#demo-navbar .dropdown-menu a").click(function(){
+            var href = $(this).attr("href");
+            $("#tab-list a[href='"+href+"']").tab("show");
+        })
+    })
+</script>

@@ -275,10 +275,70 @@ function getMyProfit(res,username,productId){
 }
 
 
+///////////////////////////关于用户的函数///////////////////////
+function getUserInfo(account,callback){
+    sqlHelper.selectTemplate("usertable", ["Account", "UserName", "PassWord", "Tel", "Sex", "IdNumber", "Birthday", "HeadPicture"], ["Account"], [account], "and", function(err,rows){
+        if(err){callback([])}
+        else{
+            callback(tool.null2arr(rows));}
+    });
+}
 
+function getUserList(res,index,callback){
+    var option = "limit " + index * 10 +", 10 ";
+    console.log(option);
+    sqlHelper.selectTemplateOp("usertable",["Account","UserName","PassWord","Tel","Sex","IdNumber","Birthday","HeadPicture"],[],[],"and",option,function(err,rows){
+        if(err){rows=[];}
+        callback(tool.null2arr(rows));
+    })
+}
+
+function addUser(account,username,password,tel,sex,idnumber,birthday,headPicture,callback){
+    sqlHelper.insertTemplate("usertable", ["Account", "UserName", "PassWord", "Tel", "Sex", "IdNumber", "Birthday", "HeadPicture"], [account, username, password, tel, sex, idnumber, birthday, headPicture], callback);
+}
+
+function modifyUser(account,username,password,tel,sex,idnumber,birthday,headPicture,callback){
+    sqlHelper.updateTemplate("usertable",["UserName","PassWord","Tel","Sex","IdNumber","Birthday","HeadPicture"],[username,password,tel,sex,idnumber,birthday,headPicture],["Account"],[account],"and",callback)
+}
+
+function removeUser(res,account){
+    sqlHelper.deleteTemplate("usertable",["Account"],[account],"and",function(result){
+        res.send(result);
+    })
+}
+
+//////////////////////////关于产品的函数////////////////////
+function getProductInfo(productname,callback){
+    sqlHelper.selectTemplate("producttable", ["ProductName", "ProductPrice", "SalesVolume", "Income", "Money", "ProductUrl", "ProductExplain", "ShortExplain", "IncomeRule", "Deadline"], ["ProductName"], [productname], "", function(err,rows){
+        if(err){rows=[];}
+        callback(tool.null2arr(rows));
+    });
+}
+
+function getProductList(index,callback){
+    var option = "limit " + index * 10 +", 10 ";
+    sqlHelper.selectTemplateOp("producttable",["ProductName","ProductPrice","SalesVolume","Income","Money","ProductUrl"],[],[],"and",option,function(err,rows){
+        if(err){rows=[];}
+        callback(tool.null2arr(rows));
+    })
+}
+
+function addProduct(productname,productprice,salesvolume,income,money,producturl,productexplain,shortexplain,incomerule,deadline,callback){
+    sqlHelper.insertTemplate("producttable",["ProductName","ProductPrice","SalesVolume","Income","Money","ProductUrl","ProductExplain","ShortExplain","IncomeRule","Deadline"], [productname,productprice,salesvolume,income,money,producturl,productexplain,shortexplain,incomerule,deadline], callback);
+}
+
+function modifyProduct(productname,productprice,salesvolume,income,money,producturl,productexplain,shortexplain,incomerule,deadline,callback){
+    sqlHelper.updateTemplate("producttable", ["ProductPrice", "SalesVolume", "Income", "Money", "ProductUrl", "ProductExplain", "ShortExplain", "IncomeRule", "Deadline"], [productprice, salesvolume, income, money, producturl, productexplain, shortexplain, incomerule, deadline], ["ProductName"], [productname], "and", callback);
+}
+
+function removeProduct(res,productname){
+    sqlHelper.deleteTemplate("producttable",["ProductName"],[productname],"and",function(result){
+        res.send(result);
+    })
+}
 
 ///////////////////////////关于联系人的函数///////////////////
-function getInsuredPeoplelist(res,username,index){
+function getInsuredPeopleList(res,username,index){
     sqlHelper.selectTemplate("insuredpeopletable",["InsuredId","InsuredName","InsuredIdNumber","Sex","Tel","Birthday"],["BuyUserAccount"],[username],"and",function(err,rows){
         tool.jsonDataOnce(res,err,tool.null2arr(rows));
     })
@@ -298,10 +358,10 @@ function addInsuredPeople(res,insuredName,insuredIdNumber,account,sex,tel,birthd
 }
 
 function modifyInsuredPeople(res,insuredName,insuredIdNumber,account,sex,tel,birthday,insuredId){
-    sqlHelper.updateTemplate('insuredpeopletable',["InsuredName","InsuredIdNumber","Sex","Tel","Birthday"],[insuredName,insuredIdNumber,sex,tel,birthday],["BuyUserAccount","InsuredId"],[account,insuredId],"and",function(err,rows){
-        tool.isUpdate(err,rows,function(result){
+    sqlHelper.updateTemplate('insuredpeopletable',["InsuredName","InsuredIdNumber","Sex","Tel","Birthday"],[insuredName,insuredIdNumber,sex,tel,birthday],["BuyUserAccount","InsuredId"],[account,insuredId],"and",function(result){
+        //tool.isUpdate(err,rows,function(result){
             res.send(result);
-        });
+        //});
     });
 }
 
@@ -323,7 +383,7 @@ function getOrderList(res,account){
 
 
 function addOrder(res,account,insuredId,productId){
-    sqlHelper.insertTemplate("ordertable",["BuyUserAccount","ProductId","insuredPeopleId","BuyTime","NowIncome"],[account,productId,insuredId,Date.now(),"0"],"and",function(result){
+    sqlHelper.insertTemplate("ordertable",["BuyUserAccount","ProductId","insuredPeopleId","BuyTime","NowIncome"],[account,productId,insuredId,Date.now(),"0"],function(result){
         res.send(result);
     });
 }
@@ -353,7 +413,7 @@ function getCommentList(res,productId,index){
 
 
 function addComment(res,account,productId,content){
-    sqlHelper.insertTemplate('evaluatetable', ["EUserAccount", "EProductId", "Econtent"], [account, productId, content], "and", function (result) {
+    sqlHelper.insertTemplate('evaluatetable', ["EUserAccount", "EProductId", "Econtent"], [account, productId, content], function (result) {
         res.send(result);
     });
 }
@@ -425,9 +485,25 @@ exports.getMyProducts           = getMyProducts;
 
 exports.getMyProfit             = getMyProfit;
 
+////////////////关于用户的函数///////////////////
+exports.getUserInfo             = getUserInfo;
+exports.getUserList             = getUserList;
+
+exports.addUser                 = addUser;
+exports.modifyUser              = modifyUser;
+exports.removeUser              = removeUser;
+
+///////////////////关于产品的函数///////////////////
+exports.getProductInfo             = getProductInfo;
+exports.getProductList             = getProductList;
+
+exports.addProduct                 = addProduct;
+exports.modifyProduct              = modifyProduct;
+exports.removeProduct              = removeProduct;
+
 
 ////////////////关于联系人的函数////////////////
-exports.getInsuredPeoplelist    = getInsuredPeoplelist;
+exports.getInsuredPeopleList    = getInsuredPeopleList;
 
 exports.addInsuredPeople        = addInsuredPeople;
 exports.modifyInsuredPeople     = modifyInsuredPeople;

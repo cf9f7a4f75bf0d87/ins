@@ -18,6 +18,16 @@ var selectTemplateOp = function(table,queryFields,conditionFields,valueFields,jo
     if(conditionFields.length!=valueFields.length){var err = "queryTemplate Error: condition is not equal to value"; console.log(err);callback(err,null);return;}
     queryFields = queryFields.join(",");
     var condition = '';
+    console.log(conditionFields);
+    console.log(conditionFields.length);
+    if(conditionFields.length!=null&&conditionFields.length==0){
+        var sql = 'select '+ queryFields + ' from ' + table +' ' + option;
+        console.log(sql);
+        tool.queryOnce(sql,callback);
+        console.log("return");
+        return;
+    }
+
     for(var i =0;i<conditionFields.length;i++){
         if(i==conditionFields.length-1){
             condition += conditionFields[i] + '= "' + valueFields[i] +'" ';
@@ -34,7 +44,7 @@ var selectTemplate = function(table,queryFields,conditionFields,valueFields,join
     selectTemplateOp(table,queryFields,conditionFields,valueFields,join,'',callback)
 };
 
-var insertTemplateOp = function(table,insertFields,valueFields,join,option,callback){
+var insertTemplateOp = function(table,insertFields,valueFields,option,callback){
     if(insertFields.length!=valueFields.length){var err= "insertTemplate Error: length is not equal"; console.log(err);callback(err);return; }
     insertFields = insertFields.join(",");
     valueFields = valueFields.join('","');
@@ -45,15 +55,15 @@ var insertTemplateOp = function(table,insertFields,valueFields,join,option,callb
     });
 };
 
-var insertTemplate = function(table,insertFields,valueFields,join,callback){
-    insertTemplateOp(table,insertFields,valueFields,join,'',callback);
+var insertTemplate = function(table,insertFields,valueFields,callback){
+    insertTemplateOp(table,insertFields,valueFields,'',callback);
 };
 
 var updateTemplateOp = function(table,updateFields,updateValueFields,conditionFields,conditionValueFields,join,option,callback) {
     if (updateFields.length != updateValueFields.length || conditionFields.length != conditionValueFields.length) {
         var err = "updateTemplate Error: length is not equal";
         console.log(err);
-        callback(err, null);
+        tool.isUpdate(err, null,callback);
         return;
     } else {
         var update = '', condition = '';
