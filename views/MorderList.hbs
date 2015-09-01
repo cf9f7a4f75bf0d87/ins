@@ -1,0 +1,91 @@
+<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#demo-navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+                <span class="icon-bar"> </span>
+            </button>
+            <a class="navbar-brand" href="#">One</a>
+        </div>
+
+        <div class="collapse navbar-collapse" id="demo-navbar">
+            <ul class="nav navbar-nav">
+                <li><a href="#">特点</a></li>
+                <li class="dropdown"><a href="orderlist" class="dropdown-toggle" data-toggle="dropdown">订单管理<span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li> <a href="orderlist">订单列表</a></li>
+                        <li> <a href="addorder">增加订单</a></li>
+                        <li> <a href="modifyorder">修改订单</a></li>
+                        <li> <a href="#">其他</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" data-toggle="modal" data-target="#about">关于</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">订单列表</div>
+        <div class="panel-body">
+            <p>在这里,您可以查看订单信息,并执行相应操作..</p>
+        </div>
+        <div class="row">
+            <div class="col-md-1">
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#" id="previous" style="width:100%;height:80px;" class="btn "><span class="glyphicon glyphicon-arrow-up"></span></a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <a href="#" id="next" style="width:100%;height:80px;" class="btn"><span class="glyphicon glyphicon-arrow-down"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-11">
+                <table class="table">
+                    <thead>
+                    <tr><th>序号</th><th>订单号</th><th>购买用户账户</th><th>购买产品名称</th><th>被保人姓名</th><th>购买时间</th><th>当前收益</th><th>修改信息</th><th>删除</th></tr>
+                    </thead>
+                    <tbody>
+                    {{#each data}}
+                        <tr><td>{{@index}}</td><td class="orderid">{{OrderId}}</td><td class="account">{{BuyUserAccount}}</td><td>{{ProductName}}</td><td>{{InsuredPeopleName}}</td><td>{{BuyTime}}</td><td>{{NowIncome}}</td><td><a class="btn btn-default" href="modifyorder?orderid={{OrderId}}" target="_blank">修改</a></td><td><button class="btn btn-default deleteorder">删除</button></td></tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="/js/bootstrap.min.js"></script>
+
+<script src="/javascripts/MorderList.js">
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var index = {{index}}||0;
+        var previous = 0, next=0;
+        if(index>0){
+            previous = index - 1;
+        }
+        var length ={{data.length}};
+        if(length==10){
+            next=index+1;
+        }else{
+            next=index;
+        }
+        $("#previous").attr("href","/manage/orderlist?index="+previous);
+        $("#next").attr("href","/manage/orderlist?index="+next);
+    });
+</script>

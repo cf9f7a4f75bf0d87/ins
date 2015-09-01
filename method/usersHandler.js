@@ -373,36 +373,49 @@ function removeInsuredPeople(res,account,insuredId){
 
 
 ////////////////订单部分/////////////////
-function getOrderList(res,account){
-    var sql = 'select OrderId,BuyUserAccount,ProductName,InsuredPeopleName,BuyTime,NowIncome from ordertable o,usertable u, producttable p where o.BuyUserAccount="'+account+'" and o.BuyUserAccount = u.Account and o.ProductId = p.ProductId';
+
+function getOrderInfo(orderid,callback){
+ //   sqlHelper.selectTemplate("ordertable o, insuredpeopletable i, producttable p",["OrderId","o.BuyUserAccount","ProductName","InsuredName","BuyTime","NowIncome"],["OrderId","o.ProductId","o.InsuredPeopleId"],[orderid,'p.ProductId','i.InsuredId'],"and",callback);
+    var sql = "select OrderId,o.BuyUserAccount,ProductName,InsuredName,BuyTime,NowIncome from ordertable o, insuredpeopletable i, producttable p where OrderId= " + orderid + " and o.ProductId= p.ProductId and o.InsuredPeopleId = i.InsuredId";
+    tool.queryOnce(sql,callback);
+}
+function getOrderList(account,callback){
+    var sql = 'select OrderId,BuyUserAccount,ProductName,InsuredName,BuyTime,NowIncome from ordertable o,usertable u, producttable p where o.BuyUserAccount="'+account+'" and o.BuyUserAccount = u.Account and o.ProductId = p.ProductId';
+    console.log(sql);
+    tool.queryOnce(sql,callback);
+}
+
+function getOrdersList(index,callback){
+    var option = " where o.ProductId=p.ProductId and o.InsuredPeopleId=i.InsuredId limit " + index * 10 + ",10";
+    sqlHelper.selectTemplateOp("ordertable o, insuredpeopletable i, producttable p",["OrderId","o.BuyUserAccount","ProductName","InsuredName","BuyTime","NowIncome"],[],[],"",option,callback);
+}
+
+
+function addOrder(account,insuredId,productId,callback){
+    sqlHelper.insertTemplate("ordertable",["BuyUserAccount","ProductId","insuredPeopleId","BuyTime","NowIncome"],[account,productId,insuredId,Date.now(),"0"],callback);
+}
+
+function addOrderEx(account,insuredname,productname,date,callback){
+    var sql = "insert into ordertable(BuyUserAccount,ProductId,InsuredPeopleId,BuyTime,NowIncome) values('"+account+"',(select ProductId from producttable where ProductName='"+productname+"'),(select InsuredId from insuredpeopletable where InsuredName='"+insuredname+"'),'"+new Date(date).getTime()+"','0');";
     console.log(sql);
     tool.queryOnce(sql,function(err,rows){
-        tool.jsonDataOnce(res,err,rows);
-    });
-}
-
-
-function addOrder(res,account,insuredId,productId){
-    sqlHelper.insertTemplate("ordertable",["BuyUserAccount","ProductId","insuredPeopleId","BuyTime","NowIncome"],[account,productId,insuredId,Date.now(),"0"],function(result){
-        res.send(result);
-    });
-}
-function modifyOrder(res,orderId,account,nowIncome){
-    sqlHelper.updateTemplate("ordertable",["nowIncome"],[nowIncome],["OrderId","BuyUserAccount"],[orderId,account],"and",function(result){
-        res.send(result);
+        console.log(err+"///"+rows);
+        callback(!err);
     })
 }
 
-function modifyOrderTime(res,account,insuredId,productId,buyTime,nowIncome){
-    sqlHelper.updateTemplate("ordertable",["BuyTime","nowIncome"],[buyTime,nowIncome],["BuyUserAccount","ProductId","insuredPeopleId"],[account,productId,insuredId],"and",function(result){
-        res.send(result);
-    })
+function modifyOrder(orderId,account,nowIncome,callback){
+    sqlHelper.updateTemplate("ordertable",["nowIncome"],[nowIncome],["OrderId","BuyUserAccount"],[orderId,account],"and",callback)
 }
 
-function removeOrder(res,account,orderId){
-    sqlHelper.deleteTemplate("ordertable",["OrderId","BuyUserAccount"],[orderId,account],"and",function(result){
-        res.send(result);
-    });
+
+
+function modifyOrderTime(account,insuredId,productId,buyTime,nowIncome,callback){
+    sqlHelper.updateTemplate("ordertable", ["BuyTime", "nowIncome"], [buyTime, nowIncome], ["BuyUserAccount", "ProductId", "insuredPeopleId"], [account, productId, insuredId], "and", callback);
+}
+
+function removeOrder(account,orderId,callback){
+    sqlHelper.deleteTemplate("ordertable",["OrderId","BuyUserAccount"],[orderId,account],"and",callback);
 }
 //////////////////评论部分//////////////////////
 function getCommentList(res,productId,index){
@@ -510,9 +523,12 @@ exports.modifyInsuredPeople     = modifyInsuredPeople;
 exports.removeInsuredPeople     = removeInsuredPeople;
 
 //////////////////关于订单的函数////////////////
-exports.getOrderList            = getOrderList;
+exports.getOrderInfo            = getOrderInfo;
+exports.getOrdersList           = getOrdersList;
+exports.getOrderList            = getOrderList;//(用户相关)
 
 exports.addOrder                = addOrder;
+exports.addOrderEx              = addOrderEx;
 exports.modifyOrder             = modifyOrder;
 exports.modifyOrderTime         = modifyOrderTime;
 

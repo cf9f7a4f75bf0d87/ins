@@ -55,6 +55,7 @@ var isAccountExist = function(account,callback){
 
 var isUpdate = function(err,rows,callback){
     console.info(err+"()"+rows);
+
     if(!err&&rows&&rows.affectedRows==1){
         callback(true);
     }else{
@@ -188,6 +189,15 @@ var null2arr = function(sth){
     }
     return sth;
 }
+
+
+
+
+
+
+//////////////////数据方法/////////////////
+var productname2id = {};
+
 
 
 ////////////////Method About Render///////////////

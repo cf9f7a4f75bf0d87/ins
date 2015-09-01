@@ -94,6 +94,45 @@ router.post("/addproduct",function(req,res){
 router.post("/removeproduct",function(req,res){
     handler.removeProduct(res,req.body.productname);
 });
+//////////////////////订单管理函数//////////////////////
+
+router.get("/orderlist",function(req,res){
+    handler.getOrdersList(req.query.index||0,function(err,data){
+        if(err){data=[];}
+        console.log(data);
+        res.render("MorderList",{title:"订单列表",data:data,index:req.query.index||0});
+    })
+});
+
+router.get("/modifyorder",function(req,res){
+    handler.getOrderInfo(req.query.orderid,function(err,data){
+        if(err){data=[];}
+        console.log(data);
+        res.render("MmodifyOrder",{title:"修改订单信息",data:data});
+    })
+});
+router.post("/modifyorder",function(req,res){
+    handler.modifyOrder(req.body.orderid,req.body.buyuseraccount,req.body.nowincome,function(result){
+        tool.validMessage(res,result,"Mresult")
+    });
+});
+
+router.get("/addorder",function(req,res){
+    res.render("MaddOrder",{title:"添加订单"});
+});
+
+router.post("/addorder",function(req,res){
+    handler.addOrderEx(req.body.buyuseraccount,req.body.insuredpeoplename,req.body.productname,req.body.buytime,function(result){
+        tool.validMessage(res, result, "Mresult");
+    });
+});
+
+router.post("/removeorder",function(req,res){
+    handler.removeOrder(req.body.account,req.body.orderid,function(result){
+        res.send(result);
+    });
+});
+
 
 
 module.exports = router;

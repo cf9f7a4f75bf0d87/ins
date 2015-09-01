@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var handler = require('../method/usersHandler.js');
 var config  = require("../method/config.js");
-
+var tool = require("../method/tool.js");
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
@@ -112,20 +112,26 @@ router.post('/removeInsuredPeople',function(req,res){
 
 ////////////////////订单部分////////////////////
 router.post('/getOrderList',function(req,res){
-    handler.getOrderList(res,req.body.username||"");
+    handler.getOrderList(req.body.username||"",function(err,rows){
+        tool.jsonDataOnce(res,err,tool.null2arr(rows));
+    });
 });
 
 
 router.post('/addOrder',function(req,res){
-    handler.addOrder(res,req.body.username||"",req.body.insuredId||"",req.body.productId||"");
+    handler.addOrder(req.body.username||"",req.body.insuredId||"",req.body.productId||"",function(result){
+        res.send(result);
+    });
 });
 
 router.post('/modifyOrder',function(req,res){
-    handler.modifyOrder(res,req.body.orderId||"",req.body.username||"",req.body.nowIncome);
+    handler.modifyOrder(req.body.orderId||"",req.body.username||"",req.body.nowIncome,function(result){res.send(result);});
 });
 
 router.post('/removeOrder', function (req, res) {
-    handler.removeOrder(res, req.body.username || "", req.body.orderId || "");
+    handler.removeOrder( req.body.username || "", req.body.orderId || "",function(result){
+        res.send(result);
+    });
 });
 
 //////////////评论////////////////////////
