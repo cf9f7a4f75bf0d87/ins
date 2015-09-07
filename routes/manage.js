@@ -8,7 +8,7 @@ var tool = require('../method/tool-response.js');
 
 router.get("/",function(req,res,next){
 
-    res.render("Mindex",{title:"Welcome to management site"});
+    res.render("Mindex",{title:"花旗保险盒子"});
 });
 
 router.get("/test", function (req, res) {

@@ -95,7 +95,7 @@ router.get('/myProfit',function(req,res){
 
 //我的联系人部分
 router.post('/getInsuredPeopleList', function (req, res) {
-    handler.getInsuredPeoplelist(res, req.body.username || "",req.body.index||0);
+    handler.getInsuredPeopleList(res, req.body.username || "",req.body.index||0);
 });
 
 router.post('/addInsuredPeople',function(req,res){
