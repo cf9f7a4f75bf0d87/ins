@@ -1,10 +1,14 @@
 var tool        = require('./tool.js');
 var sqlHelper   = require('./tool-query.js');
 var fs          = require('fs');
+var User2ProductList      = require('./config.js').User2ProductList;
 
-function list(index,res){
+
+function list(user,index,res){
     if(index<0){console.log("get InsuranceList Error-> index is lt 0");return;}
-    var sql = "select ProductId, ProductName, ShortExplain, ProductUrl from producttable limit " + index*3 + ",3";
+    var condition = User2ProductList[user];
+    if(condition==null){condition = "('a23291')";}
+    var sql = "select ProductId, ProductName, ShortExplain, ProductUrl from producttable where productId in " + condition + " limit " + index*3 + ",3";
     tool.queryOnce(sql,function(err,rows){
         tool.jsonDataOnce(res,err,rows);
     })

@@ -50,11 +50,11 @@ router.post('/getCode',function(req,res){
 });
 
 router.get('/list',function(req,res,next){
-    handler.list(req.query.index||0,res);
+    handler.list(req.query.username,req.query.index||0,res);
 });
 
 router.post('/list',function(req,res,next){
-    handler.list(req.body.index||0,res);
+    handler.list(req.body.username,req.body.index||0,res);
 });
 
 
