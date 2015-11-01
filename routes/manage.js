@@ -86,7 +86,7 @@ router.get("/addproduct",function(req,res){
 });
 
 router.post("/addproduct",function(req,res){
-    handler.addProduct(req.body.productname,req.body.productprice,req.body.salesvolume,req.body.income,req.body.money,req.body.producturl,req.body.productexplain,req.body.shortexplain,req.body.incomerule,req.body.deadline,function(result){
+    handler.addProduct(req.body.productid,req.body.productname,req.body.productprice,req.body.salesvolume,req.body.income,req.body.money,req.body.producturl,req.body.productexplain,req.body.shortexplain,req.body.incomerule,req.body.deadline,function(result){
         tool.validMessage(res, result, "Mresult");
     });
 });

@@ -323,8 +323,8 @@ function getProductList(index,callback){
     })
 }
 
-function addProduct(productname,productprice,salesvolume,income,money,producturl,productexplain,shortexplain,incomerule,deadline,callback){
-    sqlHelper.insertTemplate("producttable",["ProductName","ProductPrice","SalesVolume","Income","Money","ProductUrl","ProductExplain","ShortExplain","IncomeRule","Deadline"], [productname,productprice,salesvolume,income,money,producturl,productexplain,shortexplain,incomerule,deadline], callback);
+function addProduct(productid,productname,productprice,salesvolume,income,money,producturl,productexplain,shortexplain,incomerule,deadline,callback){
+    sqlHelper.insertTemplate("producttable",["ProductId","ProductName","ProductPrice","SalesVolume","Income","Money","ProductUrl","ProductExplain","ShortExplain","IncomeRule","Deadline"], [productid,productname,productprice,salesvolume,income,money,producturl,productexplain,shortexplain,incomerule,deadline], callback);
 }
 
 function modifyProduct(productname,productprice,salesvolume,income,money,producturl,productexplain,shortexplain,incomerule,deadline,callback){
